@@ -1,0 +1,12 @@
+
+body {
+  background-color: lime;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

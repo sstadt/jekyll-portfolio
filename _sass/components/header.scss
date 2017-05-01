@@ -1,0 +1,12 @@
+
+.header {
+  @include phone-only() {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  @include tablet-up() {
+    margin: 25vh 0 15vh;
+    padding-left: 50%;
+  }
+}

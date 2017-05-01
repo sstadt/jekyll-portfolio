@@ -1,0 +1,10 @@
+
+.nav {
+  margin-top: $global-padding;
+  padding-left: 3px;
+
+  li {
+    font-size: rem-calc($nav-link-font-size);
+    margin-bottom: $global-padding;
+  }
+}

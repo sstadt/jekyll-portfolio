@@ -1,0 +1,51 @@
+
+/**
+ * Standard Grid - TODO
+ *
+ * row
+ *   column small-12 medium-6 large-4
+ *
+ * Block Grid
+ *
+ * row small-up-1 medium-up-3 large-up-6
+ *   column
+ */
+
+$grid-max-cols: 12;
+$block-grid-max-cols: 12;
+
+@mixin block-grid ($per-row) {
+  & > .column {
+    width: (100%/$per-row);
+
+    $nth: #{$per-row}n + '+' + 1;
+    &:nth-of-type(n) { clear: none; }
+    &:nth-of-type(#{$nth}) { clear: both; }
+  }
+}
+
+@mixin block-grids($size) {
+  @for $i from 1 through $block-grid-max-cols {
+    .#{$size}-up-#{$i}  { @include block-grid($i); }
+  }
+}
+
+.row {
+  padding: 0;
+  margin-left: -($global-gutter / 2);
+  margin-right: -($global-gutter / 2);
+  @include clearfix;
+
+  &[class*="-up-"] {
+    & > .column {
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0 ($global-gutter / 2) $global-gutter ($global-gutter / 2);
+    }
+  }
+}
+
+@include phone-only { @include block-grids('small') }
+@include tablet-only { @include block-grids('medium') }
+@include desktop-up { @include block-grids('large') }
