@@ -40,9 +40,49 @@ $breakpoint-desktop: 1200px;
 
 $global-gutter: 30px; // page padding
 $global-padding: 1rem; // content padding
+$global-radius: 4px; // global border-radius
 
 
 // Nav
 // ----------------------------------
 
 $nav-link-font-size: 40;
+
+
+// Syntax Highlighting
+// ----------------------------------
+
+$sx-bg: #f7f7f7;
+
+$sx-default-color: #000;
+$sx-comment-color: #999;
+
+$sx-error-color: #a61717;
+$sx-error-bg: #e3d2d2;
+
+$sx-generic-error-color: #aa0000;
+$sx-generic-inserted-color: #ddffdd;
+$sx-generic-inserted-specific-bg: #aaffaa;
+$sx-generic-deleted-bg: #ffdddd;
+$sx-generic-deleted-specific-bg: #ffdddd;
+$sx-generic-output-color: #888;
+$sx-generic-prompt-color: #555;
+$sx-generic-subheading-color: #aaa;
+$sx-generic-traceback-color: #aa0000;
+
+$sx-keyword-type-color: #445588;
+
+$sx-literal-number: #009999;
+$sx-literal-string: #d14;
+$sx-literal-regex: #009926;
+$sx-literal-symbol: #990073;
+
+$sx-name-global: #008080;
+$sx-name-bulletin: #0086B3;
+$sx-name-class: #445588;
+$sx-name-entity: #800080;
+$sx-name-function: #990000;
+$sx-name-namespace: #555555;
+$sx-name-tag: #000080;
+
+$sx-whitespace: #bbbbbb;
