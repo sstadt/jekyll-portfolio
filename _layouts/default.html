@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScottStadt.com{% if page.title %} - {{ page.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:url" content="https://www.scottstadt.com{{ route }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ScottStadt.com{% if page.title %} - {{ page.title }}{% endif %}" />
+    <meta property="og:image" content="{{ page.thumbnail }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="description" content="{{ page.description }}" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Ubuntu:300,400i,700,700i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+  </head>
+
+  <body>
+    {% include icons.html %}
+
+    <div class="container">
+      <div class="header">
+        <h1>{{ page.title }}.</h1>
+
+        <ul class="nav">
+          {% for link in page.links %}
+            <li><a href="{{ link.route }}">{{ link.name }}</a></li>
+          {% endfor %}
+          <!-- <li><a href="/blog">Blog</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Contact</a></li> -->
+        </ul>
+      </div>
+
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
+  </body>
+
+</html>
