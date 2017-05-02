@@ -40,5 +40,5 @@ sass:
   style: compressed
 
 collections:
-  projects:
+  portfolio:
     output: true
