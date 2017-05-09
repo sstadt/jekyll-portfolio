@@ -33,6 +33,9 @@ exclude:
   - Gemfile.lock
   - docker-compose.yml
   - README.md
+  - node_modules
+  - package.json
+  - .jshintrc
 
 include: ['_pages']
 

@@ -20,8 +20,24 @@ links:
     </a>
   </li>
   <li>
-    <a href="#">
+    <a href="#modal-one">
       <svg width="100px" height="100px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-gmail"></use></svg>
     </a>
   </li>
 </ul>
+
+
+<div class="modal" id="modal-one" aria-hidden="true">
+  <a class="overlay" href="#"></a>
+  <div class="modal-dialog">
+    <a href="#" class="close">&times;</a>
+    <h2 class="mt-0">Email Me</h2>
+    <p>Who wants to click a mailto link anyway, right?</p>
+    <div class="flex-row">
+      <input type="text" id="email" class="text-center fill-width" value="sc&#111;tt&#46;stadt&#64;g&#109;ail&#46;&#99;o&#109;" />
+      <button type="button" id="copy-email" class="button" data-clipboard-target="#email" data-tooltip="Copied!">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-copy-to-clipboard"></use></svg>
+      </button>
+    </div>
+  </div>
+</div>

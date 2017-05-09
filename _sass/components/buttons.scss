@@ -1,0 +1,22 @@
+
+.button {
+  padding: 6px 10px;
+  text-transform: uppercase;
+  color: white;
+  background-color: $scarlet;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  svg {
+    fill: white;
+  }
+
+  &:hover {
+    color: white;
+    background-color: darken($scarlet, 10%);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}

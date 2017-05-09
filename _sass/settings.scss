@@ -6,6 +6,8 @@
 $pink: #ffedf0;
 $scarlet: #e43b2c;
 
+$transparent-black: rgba(0,0,0,.6);
+
 $primary: #1779ba;
 $secondary: #767676;
 $succes: #3adb76;
@@ -41,6 +43,12 @@ $breakpoint-desktop: 1200px;
 // Document
 // ----------------------------------
 
+$body-bg: #fff;
+
+$overlay-bg: $transparent-black;
+
+$transition-duration: 0.3s;
+
 $global-gutter: 30px; // page padding
 $global-padding: 1rem; // content padding
 $global-radius: 4px; // global border-radius
@@ -50,6 +58,12 @@ $global-radius: 4px; // global border-radius
 // ----------------------------------
 
 $nav-link-font-size: 40;
+
+
+// Forms
+// ----------------------------------
+
+$input-border: #ccc;
 
 
 // Syntax Highlighting
