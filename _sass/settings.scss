@@ -3,6 +3,9 @@
 // Colors
 // ----------------------------------
 
+$pink: #ffedf0;
+$scarlet: #e43b2c;
+
 $primary: #1779ba;
 $secondary: #767676;
 $succes: #3adb76;
@@ -18,7 +21,7 @@ $header-font-family: "Abel", sans-serif;
 
 $base-font-size: 16;
 
-$p-font-size: 16px;
+$p-font-size: 16;
 
 $h1-font-size: 82;
 $h2-font-size: 40;
@@ -52,7 +55,10 @@ $nav-link-font-size: 40;
 // Syntax Highlighting
 // ----------------------------------
 
-$sx-bg: #f7f7f7;
+$code-highlight-bg: #f7f7f7;
+$code-highlight-color: #000;
+
+$sx-bg: $code-highlight-bg;
 
 $sx-default-color: #000;
 $sx-comment-color: #999;

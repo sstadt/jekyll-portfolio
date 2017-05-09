@@ -1,11 +1,14 @@
 ---
 layout: default
+lightNav: true
+heroImage: //placehold.it/1600x1080
 title: "Creating an SVG Icon Store with Vue.js"
 date: 2017-05-01 10:00:00 -0500
 links:
   - name: back
     route: /blog
 ---
+{:.intro}
 Creating an SVG icon store can help to give your site a custom feel, and eliminate extra http requests for potentially bulky icon library files. Paired with a component-based front end framework like Vue.js, you can exercise an amazing amount of control over your icon libraries while keeping your pages lean and fast.
 
 SVG icon stores can be a streamlined alternative to the standard font library options. They can keep page weight down by eliminating an extra font library request, and retain infinite scalability by virtue of being a vector graphic. For this tutorial, we're going to be building an SVG icon library using Vue.js.
@@ -20,7 +23,7 @@ npm install
 npm run dev
 {% endhighlight %}
 
-Now that we have a project set up, let's get rid of that `App.vue` file and then clean up `src/main.js`. Make sure you have executed the `npm run dev` command at the end. This will compile our assets, keep them up to date throughout the tutorial, and make the page available at (localhost:8080)[http://localhost:8080].
+Now that we have a project set up, let's get rid of that `App.vue` file and then clean up `src/main.js`. Make sure you have executed the `npm run dev` command at the end. This will compile our assets, keep them up to date throughout the tutorial, and make the page available at [localhost:8080](http://localhost:8080).
 
 {% highlight javascript %}
 // src/main.js

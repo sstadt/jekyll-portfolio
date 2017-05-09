@@ -61,6 +61,13 @@
 
 */
 
+.highlighter-rouge {
+  border-radius: $global-radius;
+  padding: 0 5px;
+  background-color: $code-highlight-bg;
+  color: $code-highlight-color;
+}
+
 .highlight {
   background: $sx-bg;
   margin: 0 0 $global-padding;

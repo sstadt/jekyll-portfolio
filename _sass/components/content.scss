@@ -1,3 +1,4 @@
+
 @keyframes contentSlide {
   0% {
     opacity: 0;
@@ -10,5 +11,12 @@
 }
 
 .content {
+  max-width: 960px;
+  margin: 0 auto;
   animation: 0.5s ease-out 0s 1 contentSlide;
+
+  p.intro {
+    font-weight: bold;
+    font-size: rem-calc(22);
+  }
 }
