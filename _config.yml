@@ -46,3 +46,5 @@ sass:
 collections:
   portfolio:
     output: true
+
+s3_url: "//ssdcportfolio.s3.amazonaws.com"
