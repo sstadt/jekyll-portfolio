@@ -4,10 +4,28 @@
   background-size: cover;
   overflow: hidden;
   margin-bottom: $global-gutter;
+  position: relative;
+
+  .header-image {
+    @include tablet-up() {
+      position: absolute;
+      right: 50%;
+      top: 60%;
+      max-height: 80%;
+    }
+
+    @include tablet-only() {
+      transform: translateX(-10px) translateY(-50%);
+    }
+
+    @include desktop-up() {
+      transform: translateX(-5vw) translateY(-50%);
+    }
+  }
 
   .header-content {
     margin: 0 auto;
-    width: 1280px;
+    width: $header-width;
     max-width: 100%;
     padding-left: $global-gutter / 2;
     padding-right: $global-gutter / 2;

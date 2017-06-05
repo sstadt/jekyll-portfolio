@@ -1,7 +1,6 @@
 ---
 layout: default
-lightNav: true
-heroImage: //placehold.it/1600x1080
+heroImage: /posts/svg-store/header-SVGStore.jpg?v=1
 title: "Creating an SVG Icon Store with Vue.js"
 date: 2017-05-01 10:00:00 -0500
 links:
@@ -12,6 +11,8 @@ links:
 Creating an SVG icon store can help to give your site a custom feel, and eliminate extra http requests for potentially bulky icon library files. Paired with a component-based front end framework like Vue.js, you can exercise an amazing amount of control over your icon libraries while keeping your pages lean and fast.
 
 SVG icon stores can be a streamlined alternative to the standard font library options. They can keep page weight down by eliminating an extra font library request, and retain infinite scalability by virtue of being a vector graphic. For this tutorial, we're going to be building an SVG icon library using Vue.js.
+
+### Project Setup
 
 First thing's first. Lets get a project set up. The fastest way to do this is to use [vue-loader](https://github.com/vuejs/vue-loader) to bootstrap a project. You'll need at least version 6+ of Node installed to use the webpack-simple template.
 
@@ -33,6 +34,8 @@ new Vue({
   el: '#app'
 })
 {% endhighlight %}
+
+### Building the Icon Store
 
 Looking good, but before we create an icon component we'll need to build out the SVG store. Start off with adding the svg wrapper to `./index.html` right at the top of the body tag.
 
@@ -106,6 +109,8 @@ Awesome. Now we have 3 icons in our store that can be used anywhere on the page 
 </svg>
 {% endhighlight %}
 
+### Creating the Icon Component
+
 This is looking good, but that's a lot of markup to drop all over your app, and it's not very DRY. Well, it's better than pasting the full SVG path all over, but we can still do better. Let's build out our icon component.
 
 Start by adding a new file: `src/icon.vue`
@@ -171,6 +176,8 @@ Now that Vue is aware of our component, we can add an instance of it to our mark
 </div>
 {% endhighlight %}
 
+### Finishing Touches
+
 We're almost done now, but there are a couple things we can add to give this just a little more polish. first off, this is a rather large icon, so let's beef up our properties with some validation and an extra size attribute.
 
 {% highlight html %}
@@ -202,7 +209,7 @@ We're almost done now, but there are a couple things we can add to give this jus
 </script>
 {% endhighlight %}
 
-Perfect. Now we have a reasonably size icon component linked up to an icon store, and we can grow or shrink our icons on an individual basis. An alternative to controlling the icon size through props, you could add a class to the SVG in the template and then control the size through component styling. And adding icons to the store is as easy as adding another symbol!
+Perfect. Now we have a reasonably sized icon component linked up to an icon store, and we can grow or shrink our icons on an individual basis. An alternative to controlling the icon size through props, you could add a class to the SVG in the template and then control the size through component styling. And adding icons to the store is as easy as adding another symbol!
 
 Like this post? Have a suggestion or improvement to the technique? Let me know in the comments below!
 

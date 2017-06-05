@@ -70,12 +70,19 @@
 
 .highlight {
   background: $sx-bg;
-  margin: 0 0 $global-padding;
-  padding: $global-gutter / 2;
-  border-radius: $global-radius;
+  margin: 0 0 $global-gutter;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 
   & > pre {
-    margin: 0;
+    margin: 0 auto;
+    padding: 2rem $global-gutter;
+    width: 100%;
+    max-width: $content-width;
   }
 
   .gd, .gd .x, .gi, .gi .x {

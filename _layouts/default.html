@@ -31,6 +31,7 @@
           {% endfor %}
         </ul>
       </div>
+      {% if page.headerImage %}<img src="{{ site.s3_url }}{{ page.headerImage }}" class="header-image" />{% endif %}
     </div>
 
     <div class="content {% if page.isPost %}post{% endif %}">

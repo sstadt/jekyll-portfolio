@@ -11,9 +11,11 @@
 }
 
 .content {
-  max-width: 960px;
+  max-width: $content-width;
   margin: 0 auto;
   animation: 0.5s ease-out 0s 1 contentSlide;
+  padding-left: $global-gutter;
+  padding-right: $global-gutter;
 
   p.intro {
     font-weight: bold;
