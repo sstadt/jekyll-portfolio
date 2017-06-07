@@ -1,6 +1,7 @@
 ---
 layout: default
 heroImage: /posts/svg-store/header-SVGStore.jpg?v=1
+thumbnail: /posts/svg-store/share-SVGStore.jpg
 title: "Creating an SVG Icon Store with Vue.js"
 date: 2017-05-01 10:00:00 -0500
 links:

@@ -23,6 +23,9 @@
 
     <div class="header {% if page.fullHero %}mb-0{% endif %}" {% if page.fullHero != true %}style="background-image: url({{ site.s3_url }}{{ page.heroImage }});"{% endif %}>
       <div class="header-content {% if page.lightNav %}light{% endif %}">
+        <a href="/" class="escape-hatch">
+          <svg width="60px" height="60px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-ssdc-logo"></use></svg>
+        </a>
         <h1>{{ page.title }}.</h1>
 
         <ul class="nav">
