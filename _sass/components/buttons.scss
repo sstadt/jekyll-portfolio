@@ -1,11 +1,7 @@
 
-.button {
-  padding: 6px 10px;
-  text-transform: uppercase;
+input + .button {
   color: white;
   background-color: $scarlet;
-  transition: all 0.3s ease;
-  cursor: pointer;
 
   svg {
     fill: white;
@@ -14,6 +10,18 @@
   &:hover {
     color: white;
     background-color: darken($scarlet, 10%);
+  }
+}
+
+.button {
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 12px 18px;
+
+  &:hover, &:focus {
+    border-bottom: 0;
+    background-color: $transparent-gray;
   }
 
   &:focus {

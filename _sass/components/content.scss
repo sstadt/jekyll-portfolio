@@ -17,8 +17,61 @@
   padding-left: $global-gutter;
   padding-right: $global-gutter;
 
-  p.intro {
-    font-weight: bold;
-    font-size: rem-calc(22);
+  img {
+    margin-bottom: 2rem;
+
+    &.float-right {
+      margin-left: 2rem;
+
+      @include tablet-up() {
+        max-width: 40%;
+      }
+    }
+
+    &.float-left {
+      margin-right: 2rem;
+
+      @include tablet-up() {
+        max-width: 40%;
+      }
+    }
+  }
+
+  p {
+    margin: 2rem 0;
+    font-size: rem-calc($p-font-size * $content-type-mod);
+
+    &.intro {
+      font-weight: bold;
+      font-size: rem-calc(22);
+    }
+  }
+
+  h1 {
+    font-size: rem-calc($h1-font-size * $content-type-mod);
+  }
+
+  h2 {
+    font-size: rem-calc($h2-font-size * $content-type-mod);
+  }
+
+  h3 {
+    font-size: rem-calc($h3-font-size * $content-type-mod);
+  }
+
+  h4 {
+    font-size: rem-calc($h4-font-size * $content-type-mod);
+  }
+
+  h5 {
+    font-size: rem-calc($h5-font-size * $content-type-mod);
+  }
+
+  h6 {
+    font-size: rem-calc($h6-font-size * $content-type-mod);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 2rem 0;
   }
 }

@@ -59,3 +59,27 @@ ul {
     }
   }
 }
+
+.externals {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: right;
+
+  li {
+    display: inline;
+    margin-left: 1rem;
+  }
+}
+
+.tech-stack {
+  margin-bottom: 2rem;
+
+  li {
+    padding: 8px 14px;
+    display: inline;
+    margin-right: 1rem;
+    background-color: $transparent-red;
+    color: white;
+    border-radius: 4px;
+  }
+}
