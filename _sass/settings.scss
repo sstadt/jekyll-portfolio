@@ -12,7 +12,7 @@ $transparent-red: rgba(202, 13, 13, 0.64);
 
 $primary: #1779ba;
 $secondary: #767676;
-$succes: #3adb76;
+$success: #3adb76;
 $warning: #ffae00;
 $alert: #cc4b37;
 
@@ -69,6 +69,22 @@ $header-width: 1280px;
 $nav-link-font-size: 40;
 
 
+// Buttons
+// ----------------------------------
+
+$button-bg-default: transparent;
+$button-bg-default-hover: $transparent-gray;
+$button-bg-primary: $primary;
+$button-bg-primary-hover: $primary;
+
+$button-color-default: black;
+$button-color-primary: white;
+
+$pill-bg: $primary;
+$pill-color: white;
+
+
+
 // Forms
 // ----------------------------------
 
@@ -78,13 +94,14 @@ $input-border: #ccc;
 // Syntax Highlighting
 // ----------------------------------
 
-$code-highlight-bg: #f7f7f7;
-$code-highlight-color: #000;
+$code-highlight-bg: #282c34;
+$code-highlight-color: #abb2bf;
 
 $sx-bg: $code-highlight-bg;
+$sx-color: $code-highlight-color;
 
-$sx-default-color: #000;
-$sx-comment-color: #999;
+$sx-default-color: #9b869c;
+$sx-comment-color: #5c6370;
 
 $sx-error-color: #a61717;
 $sx-error-bg: #e3d2d2;
@@ -101,17 +118,18 @@ $sx-generic-traceback-color: #aa0000;
 
 $sx-keyword-type-color: #445588;
 
-$sx-literal-number: #009999;
-$sx-literal-string: #d14;
-$sx-literal-regex: #009926;
-$sx-literal-symbol: #990073;
+$sx-literal-number: #cd9765;
+$sx-literal-string: #95c077;
+$sx-literal-regex: #56b6c2;
+$sx-literal-symbol: #56b6c2;
 
-$sx-name-global: #008080;
-$sx-name-bulletin: #0086B3;
-$sx-name-class: #445588;
-$sx-name-entity: #800080;
-$sx-name-function: #990000;
-$sx-name-namespace: #555555;
-$sx-name-tag: #000080;
+$sx-name-global: #abb2bf;
+$sx-name-attribute: #d19a66;
+$sx-name-bulletin: #abb2bf;
+$sx-name-class: #cd9765;
+$sx-name-entity: #cd9765;
+$sx-name-function: #61afef;
+$sx-name-namespace: #cd9765;
+$sx-name-tag: #db6a73;
 
 $sx-whitespace: #bbbbbb;

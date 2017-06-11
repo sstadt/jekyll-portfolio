@@ -63,9 +63,10 @@
 
 .highlighter-rouge {
   border-radius: $global-radius;
-  padding: 0 5px;
+  padding: 5px 9px;
   background-color: $code-highlight-bg;
   color: $code-highlight-color;
+  font-size: 0.85em;
 }
 
 .highlight {
@@ -77,6 +78,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  color: $code-highlight-color;
 
   & > pre {
     margin: 0 auto;
@@ -97,9 +99,9 @@
     font-style: italic;
   }
 
-  .k, .o, .cp, .cs, .gs, .kc, .kd, .kp, .kr, .kt, .nc, .ne, .nf, .ow {
-    font-weight: bold;
-  }
+  // .k, .o, .cp, .cs, .gs, .kc, .kd, .kp, .kr, .kt, .nc, .ne, .nf, .ow {
+  //   font-weight: bold;
+  // }
 
   .err {
     color: $sx-error-color;
@@ -162,7 +164,11 @@
     color: $sx-literal-symbol;
   }
 
-  .na, .no, .nv, .vc, .vg, .vi {
+  .na {
+    color: $sx-name-attribute;
+  }
+
+  .no, .nv, .vc, .vg, .vi {
     color: $sx-name-global;
   }
 
@@ -200,6 +206,10 @@
 
   .il {
     color: $sx-literal-number;
+  }
+
+  .nx {
+    color: $sx-literal-symbol;
   }
 }
 

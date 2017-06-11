@@ -4,12 +4,12 @@ body {
 }
 
 a {
-  color: $scarlet;
+  color: $primary;
   text-decoration: none;
 
   &:hover, &:focus, &:active {
-    color: $scarlet;
-    border-bottom: 1px solid $scarlet;
+    color: $primary;
+    border-bottom: 1px solid $primary;
   }
 }
 

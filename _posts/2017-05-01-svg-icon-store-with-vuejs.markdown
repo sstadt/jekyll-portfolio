@@ -25,7 +25,7 @@ npm install
 npm run dev
 {% endhighlight %}
 
-Now that we have a project set up, let's get rid of that `App.vue` file and then clean up `src/main.js`. Make sure you have executed the `npm run dev` command at the end. This will compile our assets, keep them up to date throughout the tutorial, and make the page available at [localhost:8080](http://localhost:8080).
+Now that we have a project set up, let's get rid of that `App.vue` file and then clean up `src/main.js`. Make sure you have executed the `npm run dev` command at the end; This will compile our assets, keep them up to date throughout the tutorial, and make the page available at [localhost:8080](http://localhost:8080).
 
 {% highlight javascript %}
 // src/main.js

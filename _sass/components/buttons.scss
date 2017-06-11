@@ -1,15 +1,15 @@
 
-input + .button {
-  color: white;
-  background-color: $scarlet;
+input + .button, .button.primary {
+  color: $button-color-primary;
+  background-color: $button-bg-primary;
 
   svg {
-    fill: white;
+    fill: $button-color-primary;
   }
 
   &:hover {
-    color: white;
-    background-color: darken($scarlet, 10%);
+    color: $button-color-primary;
+    background-color: darken($button-bg-primary, 10%);
   }
 }
 
@@ -18,13 +18,16 @@ input + .button {
   transition: all 0.3s ease;
   cursor: pointer;
   padding: 12px 18px;
+  color: $button-color-default;
+  background-color: $button-bg-default;
 
-  &:hover, &:focus {
-    border-bottom: 0;
-    background-color: $transparent-gray;
+  svg {
+    fill: $button-color-default;
   }
 
-  &:focus {
+  &:hover, &:focus {
     outline: 0;
+    border-bottom: 0;
+    background-color: $button-bg-default-hover;
   }
 }

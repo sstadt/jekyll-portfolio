@@ -10,8 +10,13 @@ links:
   - name: Contact
     route: /contact
 ---
-<div class="row small-up-1 medium-up-2 large-up-3">
+<div class="row small-up-1 large-up-2 article-list">
   {% for project in site.portfolio %}
-    <div class="column"><a href="{{ project.url }}">{{ project.title }}</a></div>
+    <div class="column">
+      <a href="{{ project.url }}">
+        <img src="{{ site.s3_url }}{{ project.thumbnail }}" />
+        <h3 class="heading">{{ project.title }}</h3>
+      </a>
+    </div>
   {% endfor %}
 </div>
