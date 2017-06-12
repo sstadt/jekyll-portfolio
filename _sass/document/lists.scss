@@ -24,32 +24,9 @@ ul {
       border-bottom: 0;
       color: $base-font-color;
 
-      h1, h2, h3, h4, h5, h6 {
-        border-bottom: 1px;
-      }
-
-      &:after {
+      .heading {
         opacity: 1;
       }
-    }
-
-    &:before, &:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
-
-    &:before {
-      background: linear-gradient(4deg, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 99%,rgba(0,0,0,0) 100%);
-    }
-
-    &:after {
-      transition: all 0.3s ease;
-      opacity: 0;
-      background: linear-gradient(4deg, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 75%,rgba(0,0,0,0) 99%,rgba(0,0,0,0) 100%);
     }
 
     img {
@@ -59,13 +36,17 @@ ul {
     .heading {
       position: absolute;
       z-index: 1;
-      bottom: 20px;
+      bottom: 0;
       left: 0;
       color: white;
       font-size: rem-calc(28);
       margin: 0;
-      padding: 0 20px;
-      text-shadow: 2px 2px rgba(0, 0, 0, 0.6);
+      padding: 12px 20px;
+      line-height: 1.1;
+      width: 100%;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      background-color: $transparent-black;
     }
   }
 }
