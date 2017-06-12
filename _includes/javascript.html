@@ -1,0 +1,19 @@
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.1/clipboard.min.js"></script>
+<script type="text/javascript">
+  new Clipboard('#copy-email');
+
+  document.querySelectorAll('[data-tooltip]').forEach(function (tooltip) {
+    tooltip.addEventListener('click', function () {
+      var self = this;
+
+      if (!self.classList.contains('show-tooltip')) {
+        self.classList.add('show-tooltip');
+
+        setTimeout(function () {
+          self.classList.remove('show-tooltip');
+        }, 3000);
+      }
+    });
+  });
+</script>

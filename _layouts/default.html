@@ -2,30 +2,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ScottStadt.com{% if page.title %} - {{ page.title }}{% endif %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <meta property="og:url" content="https://www.scottstadt.com{{ route }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="ScottStadt.com{% if page.title %} - {{ page.title }}{% endif %}" />
-    <meta property="og:image" content="{{ site.s3_url }}{{ page.thumbnail }}" />
-    <meta property="og:description" content="{{ page.description }}" />
-    <meta property="description" content="{{ page.description }}" />
-
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Abel|Ubuntu:300,400i,700,700i">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-
+    {% include meta.html %}
   </head>
 
   <body {% if page.fullHero %}class="full" style="background-image: url({{ site.s3_url }}{{ page.heroImage }});"{% endif %}>
     {% include icons.html %}
 
-    <div class="header {% if page.fullHero %}mb-0{% endif %}" {% if page.fullHero != true %}style="background-image: url({{ site.s3_url }}{{ page.heroImage }});"{% endif %}>
+    <header {% if page.fullHero %}class="mb-0"{% endif %} {% if page.fullHero != true %}style="background-image: url({{ site.s3_url }}{{ page.heroImage }});"{% endif %}>
       <div class="header-content {% if page.lightNav %}light{% endif %}">
-        <a href="/" class="escape-hatch">
-          <svg width="60px" height="60px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-ssdc-logo"></use></svg>
-        </a>
+        {% include menu.html %}
         <h1>{{ page.title }}.</h1>
 
         <ul class="nav">
@@ -35,30 +20,23 @@
         </ul>
       </div>
       {% if page.headerImage %}<img src="{{ site.s3_url }}{{ page.headerImage }}" class="header-image" />{% endif %}
-    </div>
+    </header>
 
-    <div class="content {% if page.isPost %}post{% endif %}">
+    <div class="content {% if page.isPost %}post{% endif %} {% if page.wide %}wide{% endif %}">
       {{ content }}
     </div>
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.1/clipboard.min.js"></script>
-    <script type="text/javascript">
-      new Clipboard('#copy-email');
+    <!-- <footer class="content">
+      <p class="footer-copyright">&copy; Scott Stadt 2016</p>
+      <ul class="footer-links inline float-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </footer> -->
 
-      document.querySelectorAll('[data-tooltip]').forEach(function (tooltip) {
-        tooltip.addEventListener('click', function () {
-          var self = this;
-
-          if (!self.classList.contains('show-tooltip')) {
-            self.classList.add('show-tooltip');
-
-            setTimeout(function () {
-              self.classList.remove('show-tooltip');
-            }, 3000);
-          }
-        });
-      });
-    </script>
+    {% include javascript.html %}
 
   </body>
 

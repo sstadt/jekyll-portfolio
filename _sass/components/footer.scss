@@ -1,0 +1,29 @@
+
+footer {
+  @include clearfix();
+  padding: 10px 0;
+
+  .footer-links {
+    li:not(:first-child) a {
+      padding-left: 20px;
+    }
+
+    li:not(:last-child) a {
+      padding-right: 20px;
+      border-right: 1px solid #aaa;
+    }
+
+    a {
+      font-size: rem-calc(10);
+      color: #aaa;
+      text-transform: uppercase;
+      font-weight: bold;
+      line-height: 1;
+
+      &:hover, &:focus {
+        color: #666;
+        border-bottom: 0;
+      }
+    }
+  }
+}

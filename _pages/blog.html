@@ -1,17 +1,15 @@
 ---
-layout: default
+layout: articles
 title: Blog
 permalink: /blog
-heroImage: /hero-blog.jpg
-lightNav: true
 links:
   - name: Portfolio
     route: /portfolio
   - name: Contact
     route: /contact
 ---
-<div class="row small-up-1 large-up-2 article-list">
-  {% for post in site.posts %}
+<div class="row small-up-1 medium-up-2 large-up-3 article-list">
+  {% for post in site.posts offset:1 %}
     <div class="column">
       <a href="{{ post.url }}">
         <img src="{{ site.s3_url }}{{ post.thumbnail }}" />

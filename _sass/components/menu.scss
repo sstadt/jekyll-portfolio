@@ -1,0 +1,47 @@
+
+.escape-hatch {
+  & > a {
+    opacity: 0.9;
+    transition: all 0.3s ease;
+
+    @include desktop-up() {
+      opacity: 0.65;
+    }
+  }
+
+  &:hover > a {
+    opacity: 0.9;
+  }
+
+  a:hover, a:focus {
+    border-bottom: 0;
+  }
+
+  &:not(:hover) .menu {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    transform: translateY(-20px);
+  }
+
+  .menu {
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease;
+    margin: 0;
+    padding-top: 10px;
+
+    li a {
+      opacity: 0.9;
+      display: block;
+      color: black;
+      padding: 8px 16px;
+      transition: all 0.3s ease;
+
+      &:hover, &:focus {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+}
