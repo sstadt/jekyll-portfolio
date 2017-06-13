@@ -11,16 +11,13 @@ header {
     @include tablet-up() {
       position: absolute;
       right: 50%;
-      top: 60%;
+      bottom: 0;
       max-height: 80%;
-    }
-
-    @include tablet-only() {
-      transform: translateX(-10px) translateY(-50%);
+      max-width: 50%;
     }
 
     @include desktop-up() {
-      transform: translateX(-5vw) translateY(-50%);
+      transform: translateX(-5vw);
     }
   }
 
