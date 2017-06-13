@@ -29,8 +29,8 @@ header {
     padding-right: $global-gutter / 2;
 
     @include phone-only() {
-      margin-top: 80px;
-      margin-bottom: 80px;
+      margin-top: 120px;
+      margin-bottom: 0;
     }
 
     @include tablet-up() {

@@ -2,8 +2,9 @@
 layout: default
 title: Spitfire Smartscan
 thumbnail: /projects/solid/share-SpitfireSmartscan.jpg
-heroImage: /projects/solid/hero-Solid.jpg
+heroImage: "/projects/solid/hero-Solid.jpg?v=1"
 headerImage: "/projects/solid/header-SpitfireSmartscan.png?v=1"
+order: 4
 links:
   - name: back
     route: /portfolio

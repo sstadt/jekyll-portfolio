@@ -4,6 +4,7 @@ title: Game Table
 thumbnail: /projects/game-table/share-GameTable.jpg
 heroImage: /projects/game-table/hero-GameTable.jpg
 headerImage: /projects/game-table/header-GameTable.png
+order: 7
 lightNav: true
 links:
   - name: back
@@ -23,6 +24,7 @@ The Game Table application is a pet project of mine, built to support the [FFG S
  - VueMaterial
  - Karma/Jasmine
  - Socket.io
+ - MongoDB
 
 Supporting a single system gives a rather narrow focus, but online alternatives for this system are few and far between. Those that do exist are buggy, hack on experiences, or have just terrible UX.
 

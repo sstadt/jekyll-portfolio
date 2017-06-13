@@ -2,8 +2,9 @@
 layout: default
 title: Sydney Symphony Orchestra
 thumbnail: /projects/l2/share-sso.jpg
-heroImage: /projects/l2/hero-l2.jpg
-headerImage: /projects/l2/header-sso.png
+heroImage: "/projects/l2/hero-l2.jpg?v=1"
+headerImage: "/projects/l2/header-sso.png?v=1"
+order: 6
 links:
   - name: back
     route: /portfolio

@@ -63,12 +63,17 @@ ul {
 }
 
 .tech-stack {
-  margin-bottom: 2rem;
+  margin-bottom: -1rem;
+
+  &:last-child {
+    margin-bottom: 1rem;
+  }
 
   li {
     padding: 8px 16px;
-    display: inline;
+    display: inline-block;
     margin-right: 1rem;
+    margin-bottom: 1rem;
     padding-left: 32px;
     background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><polygon fill="#fff" points="32.504,0.016 14.809,27.35 5.14,18.726 0.67,25.516 16.316,39.984 39.33,4.432 "/></svg>');
     background-position: 13px center;
