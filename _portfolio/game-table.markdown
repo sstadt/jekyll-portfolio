@@ -4,7 +4,7 @@ title: Game Table
 thumbnail: /projects/game-table/share-GameTable.jpg
 heroImage: /projects/game-table/hero-GameTable.jpg
 headerImage: /projects/game-table/header-GameTable.png
-order: 7
+order: 8
 lightNav: true
 links:
   - name: back
