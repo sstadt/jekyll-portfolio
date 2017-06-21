@@ -15,3 +15,59 @@
 @mixin desktop-up {
   @media (min-width: $breakpoint-desktop) { @content; }
 }
+
+.show-phone {
+  @include tablet-up() {
+    display: none;
+  }
+}
+
+.hide-phone {
+  @include phone-only() {
+    display: none;
+  }
+}
+
+.show-tablet {
+  @include phone-only() {
+    display: none;
+  }
+
+  @include desktop-up() {
+    display: none;
+  }
+}
+
+.show-tablet-up {
+  @include phone-only() {
+    display: none;
+  }
+}
+
+.hide-tablet {
+  @include tablet-only() {
+    display: none;
+  }
+}
+
+.hide-tablet-up {
+  @include tablet-up() {
+    display: none;
+  }
+}
+
+.show-desktop {
+  @include phone-only() {
+    display: none;
+  }
+
+  @include tablet-only() {
+    display: none;
+  }
+}
+
+.hide-desktop {
+  @include desktop-up() {
+    display: none;
+  }
+}

@@ -1,5 +1,35 @@
 
 .escape-hatch {
+  position: absolute;
+  top: 0;
+  padding-top: $global-gutter;
+  z-index: 1;
+
+  @include phone-only() {
+    right: $global-gutter;
+
+    & > a {
+      @include clearfix();
+
+      svg {
+        float: right;
+      }
+    }
+
+    .menu {
+      padding-top: 4px;
+
+      a {
+        text-align: right;
+        background-color: $transparent-white;
+      }
+    }
+  }
+
+  @include tablet-up() {
+    left: $global-gutter;
+  }
+
   & > a {
     opacity: 0.9;
     transition: all 0.3s ease;
@@ -9,7 +39,7 @@
     }
   }
 
-  &:hover > a {
+  &:target > a {
     opacity: 0.9;
   }
 
@@ -17,11 +47,20 @@
     border-bottom: 0;
   }
 
-  &:not(:hover) .menu {
+  &:not(:target) .menu {
     opacity: 0;
     height: 0;
     margin: 0;
     transform: translateY(-20px);
+    pointer-events: none;
+  }
+
+  &:target .open-menu {
+    display: none;
+  }
+
+  &:not(:target) .close-menu {
+    display: none;
   }
 
   .menu {

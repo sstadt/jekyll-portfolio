@@ -11,7 +11,7 @@
     <header {% if page.fullHero %}class="mb-0"{% endif %} {% if page.fullHero != true %}style="background-image: url({{ site.s3_url }}{{ page.heroImage }});"{% endif %}>
       <div class="header-content {% if page.lightNav %}light{% endif %}">
         {% include menu.html %}
-        <h1>{{ page.title }}.</h1>
+        <h1>{{ page.title }}</h1>
 
         <ul class="nav">
           {% for link in page.links %}

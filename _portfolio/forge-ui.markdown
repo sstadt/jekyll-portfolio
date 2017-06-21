@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: Forge UI
 thumbnail: /projects/forge-ui/share-ForgeUI.jpg
 heroImage: "/projects/forge-ui/hero-ForgeUI.jpg?v=2"

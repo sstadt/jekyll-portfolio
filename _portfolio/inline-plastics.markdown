@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: Inline Plastics
 thumbnail: /projects/solid/share-InlinePlastics.jpg
 heroImage: "/projects/solid/hero-Solid.jpg?v=1"

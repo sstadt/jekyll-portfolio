@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include meta.html %}
+  </head>
+
+  <body>
+    {% include icons.html %}
+
+    <header style="background-image: url({{ site.s3_url }}{{ page.heroImage }});">
+      <div class="header-content {% if page.lightNav %}light{% endif %}">
+        {% include menu.html %}
+        <h1 class="show-tablet-up">{{ page.title }}</h1>
+
+        <ul class="nav show-tablet-up">
+          {% for link in page.links %}
+            <li><a href="{{ link.route }}">{{ link.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% if page.headerImage %}<img src="{{ site.s3_url }}{{ page.headerImage }}" class="header-image" />{% endif %}
+    </header>
+
+    <div class="content">
+      <h1 class="show-phone">{{ page.title }}</h1>
+      <ul class="inline show-phone">
+        {% for link in page.links %}
+          <li><a href="{{ link.route }}">{{ link.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {{ content }}
+    </div>
+
+    {% include javascript.html %}
+
+  </body>
+
+</html>

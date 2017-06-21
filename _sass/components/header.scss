@@ -7,11 +7,20 @@ header {
   position: relative;
   min-height: 65vh;
 
+  @include phone-only {
+    background-position: 25% center;
+
+    h1 {
+      font-size: rem-calc($h1-content-font-size);
+    }
+  }
+
   .header-image {
+    bottom: 0;
+    position: absolute;
+
     @include tablet-up() {
-      position: absolute;
       right: 50%;
-      bottom: 0;
       max-height: 80%;
       max-width: 50%;
     }
@@ -73,14 +82,12 @@ header {
             color: black;
             background-color: white;
           }
+
+          @include phone-only() {
+            background-color: $transparent-black;
+          }
         }
       }
-    }
-
-    .escape-hatch {
-      position: absolute;
-      top: $global-gutter;
-      left: $global-gutter;
     }
   }
 }

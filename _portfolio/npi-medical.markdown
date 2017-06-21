@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: NPI Medical
 thumbnail: /projects/solid/share-NPIMedical.jpg
 heroImage: "/projects/solid/hero-Solid.jpg?v=1"
