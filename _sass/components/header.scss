@@ -1,19 +1,9 @@
 
 header {
-  background-position: center;
-  background-size: cover;
-  overflow: hidden;
   margin-bottom: $global-gutter;
   position: relative;
-  min-height: 65vh;
-
-  @include phone-only {
-    background-position: 25% center;
-
-    h1 {
-      font-size: rem-calc($h1-content-font-size);
-    }
-  }
+  max-width: 100%;
+  overflow: hidden;
 
   .header-image {
     bottom: 0;
@@ -31,61 +21,67 @@ header {
   }
 
   .header-content {
-    margin: 0 auto;
-    width: $header-width;
+    position: absolute;
+    top: 0;
     max-width: 100%;
     padding-left: $global-gutter / 2;
     padding-right: $global-gutter / 2;
-
-    @include phone-only() {
-      margin-top: 120px;
-      margin-bottom: 0;
-    }
+    top: 50%;
+    transform: translateY(-50%);
 
     @include tablet-up() {
-      margin: 25vh 0 15vh;
-      padding-left: 50%;
+      left: 50%;
+      max-width: 50%;
+    }
+
+    .header-description {
+      font-size: 1.5rem;
+    }
+  }
+
+  .nav a {
+    color: black;
+
+    &:hover {
+      color: black;
+      border-color: black;
+    }
+  }
+
+  &.light {
+    h1, p {
+      color: white;
     }
 
     .nav a {
-      color: black;
+      color: white;
 
       &:hover {
-        color: black;
-        border-color: black;
+        color: white;
+        border-color: white;
       }
     }
 
-    &.light {
-      h1 {
-        color: white;
+    .escape-hatch {
+      position: absolute;
+      top: 0;
+      left: $global-gutter / 2;
+      top: $global-gutter / 2;
+
+      svg {
+        fill: white;
       }
 
-      .nav a {
+      .menu li a {
         color: white;
 
-        &:hover {
-          color: white;
-          border-color: white;
-        }
-      }
-
-      .escape-hatch {
-        svg {
-          fill: white;
+        &:hover, &:focus {
+          color: black;
+          background-color: white;
         }
 
-        .menu li a {
-          color: white;
-
-          &:hover, &:focus {
-            color: black;
-            background-color: white;
-          }
-
-          @include phone-only() {
-            background-color: $transparent-black;
-          }
+        @include phone-only() {
+          background-color: $transparent-black;
         }
       }
     }

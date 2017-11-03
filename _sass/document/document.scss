@@ -10,13 +10,6 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  overflow-x: hidden;
-
-  &.full {
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-  }
 }
 
 img, svg {
@@ -42,4 +35,10 @@ pre {
 
 .float-right {
   float: right;
+}
+
+.clearfix {
+  content: '';
+  display: table;
+  clear: both;
 }

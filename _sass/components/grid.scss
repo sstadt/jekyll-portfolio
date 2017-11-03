@@ -11,8 +11,17 @@
  *   column
  */
 
+$grid-row-width: 100%;
 $grid-max-cols: 12;
 $block-grid-max-cols: 12;
+
+@mixin grid-row($size) {
+  @for $i from 1 through $grid-max-cols {
+    &.#{$size}-#{$i} {
+      width: percentage($i / $grid-max-cols);
+    }
+  }
+}
 
 @mixin block-grid ($per-row) {
   & > .column {
@@ -43,6 +52,17 @@ $block-grid-max-cols: 12;
       margin: 0;
       padding: 0 ($global-gutter / 2) $global-gutter ($global-gutter / 2);
     }
+  }
+
+  & > .column {
+    float: left;
+
+    padding-left: $global-gutter / 2;
+    padding-right: $global-gutter / 2;
+
+    @include grid-row('small');
+    @include tablet-up { @include grid-row('medium'); }
+    @include desktop-up { @include grid-row('large'); }
   }
 }
 

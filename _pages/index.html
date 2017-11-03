@@ -1,15 +1,16 @@
 ---
 layout: default
-title: Welcome
+title: Lorem Ipsum
+description: Lorem ipsum dolor sit amet.
 permalink: /
 heroImage: /hero-space.jpg
 lightNav: true
-fullHero: true
-links:
-  - name: Blog
-    route: /blog
-  - name: Portfolio
-    route: /portfolio
-  - name: Contact
-    route: /contact
 ---
+
+{% for post in site.posts %}
+<div class="article-preview clearfix">
+  <h3 class="heading">{{ post.title }}</h3>
+  {{ post.excerpt }}
+  <a href="{{ post.url }}" class="button float-right">Continue Reading</a>
+</div>
+{% endfor %}

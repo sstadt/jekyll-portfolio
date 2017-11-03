@@ -2,7 +2,6 @@
 .escape-hatch {
   position: absolute;
   top: 0;
-  padding-top: $global-gutter;
   z-index: 1;
 
   @include phone-only() {
