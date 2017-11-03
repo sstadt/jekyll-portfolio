@@ -4,9 +4,6 @@ heroImage: "/posts/svg-store/header-SVGStore.jpg?v=1"
 thumbnail: /posts/svg-store/share-SVGStore.jpg
 title: "Creating an SVG Icon Store with Vue.js"
 date: 2017-05-01 10:00:00 -0500
-links:
-  - name: back
-    route: /blog
 ---
 {:.intro}
 Creating an SVG icon store can help to give your site a custom feel, and eliminate extra http requests for potentially bulky icon library files. Paired with a component-based front end framework like Vue.js, you can exercise an amazing amount of control over your icon libraries while keeping your pages lean and fast.

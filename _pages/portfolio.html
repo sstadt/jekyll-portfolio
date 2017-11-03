@@ -12,7 +12,9 @@ lightNav: true
     <div class="column">
       <a href="{{ project.url }}">
         <img src="{{ site.s3_url }}{{ project.thumbnail }}" />
-        <h3 class="heading">{{ project.title }}</h3>
+        <span class="article-overlay">
+          <h3 class="heading">{{ project.title }}</h3>
+        </span>
       </a>
     </div>
   {% endfor %}

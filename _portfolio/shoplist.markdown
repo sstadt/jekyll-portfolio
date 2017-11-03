@@ -10,7 +10,6 @@ links:
     route: /portfolio
 ---
 {:.externals}
- - [Demo Site](https://shoplist.scottstadt.com/){:.button}
  - [Github](https://github.com/sstadt/shoplist){:.button}
 
 {:.intro}

@@ -19,34 +19,42 @@ ul {
     color: $base-font-color;
     position: relative;
     display: inline-block;
+    overflow: hidden;
+    margin-bottom: -3px;
 
     &:hover, &:focus {
       border-bottom: 0;
       color: $base-font-color;
 
-      .heading {
+      .article-overlay {
         opacity: 1;
+        top: 0;
       }
     }
 
     img {
-      margin: 0;
+      margin: 0 0 -3px;
     }
 
-    .heading {
-      position: absolute;
-      z-index: 1;
-      bottom: 3px;
-      left: 0;
-      color: white;
-      font-size: rem-calc(28);
-      margin: 0;
-      padding: 12px 20px;
-      line-height: 1.1;
-      width: 100%;
+    .article-overlay {
       opacity: 0.8;
       transition: all 0.3s ease;
       background-color: $transparent-black;
+      position: absolute;
+      z-index: 1;
+      top: calc(100% - 54px);
+      left: 0;
+      color: white;
+      margin: 0;
+      padding: 12px 20px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .heading {
+      font-size: rem-calc(28);
+      line-height: 1.1;
+      margin: 0;
     }
   }
 }
