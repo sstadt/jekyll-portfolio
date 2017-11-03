@@ -8,9 +8,8 @@
   <body>
     {% include icons.html %}
 
-    <header {% if page.lightNav %}class="light{% endif %}">
+    <header {% if page.lightNav %}class="light"{% endif %} style="background-image: url({{ site.s3_url }}{{ page.heroImage }});">
       {% include menu.html %}
-      <img src="{{ site.s3_url }}{{ page.heroImage }}" />
       <div class="header-content">
         <h1>{{ page.title }}</h1>
         {% if page.description %}<p class="header-description">{{ page.description }}</p>{% endif %}
@@ -22,15 +21,7 @@
       {{ content }}
     </div>
 
-    <footer>
-      <div class="content">
-        <div class="footer-content">
-          <div class="avatar"><img src="//placehold.it/300x300" /></div>
-          <p>Scott Stadt is a Front End Developer based out of Columbus, OH. Hates thinking of PHP as a language with built in templates. Loves not writing the same code twice... and Star Wars. <a href="/contact">Get in touch!</a></p>
-        </div>
-      </div>
-    </footer>
-
+    {% include footer.html %}
     {% include javascript.html %}
 
   </body>

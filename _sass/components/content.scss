@@ -10,12 +10,15 @@
   }
 }
 
-.content {
-  max-width: $content-width;
-  margin: 0 auto;
+body > .content {
   animation: 0.5s ease-out 0s 1 contentSlide;
   padding-left: $global-gutter;
   padding-right: $global-gutter;
+}
+
+.content {
+  max-width: $content-width;
+  margin: 0 auto;
 
   &.wide {
     max-width: 100%;
