@@ -42,3 +42,27 @@ pre {
   display: table;
   clear: both;
 }
+
+.avatar {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+
+  &:after {
+    content: '';
+    width: 100%;
+    padding-bottom: 100%;
+    display: block;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
