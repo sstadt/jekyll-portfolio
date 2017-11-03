@@ -5,9 +5,7 @@ thumbnail: /projects/l2/share-sso.jpg
 heroImage: "/projects/l2/hero-l2.jpg?v=1"
 headerImage: "/projects/l2/header-sso.png?v=1"
 order: 6
-links:
-  - name: back
-    route: /portfolio
+synopsis: Home page for Sydney Symphony Orchestra
 ---
 {:.externals}
  - [Live Site](https://www.sydneysymphony.com/){:.button}

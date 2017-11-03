@@ -6,9 +6,7 @@ heroImage: /projects/game-table/hero-GameTable.jpg
 headerImage: /projects/game-table/header-GameTable.png
 order: 8
 lightNav: true
-links:
-  - name: back
-    route: /portfolio
+synopsis: A custom Game Table built for FFG Star Wars series of pen and paper RPGs
 ---
 {:.externals}
  - [Demo Site](https://sw.scottstadt.com){:.button}

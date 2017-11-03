@@ -5,9 +5,7 @@ thumbnail: /projects/shoplist/share-shoplist.jpg
 heroImage: /projects/shoplist/hero-shoplist.jpg
 order: 4
 lightNav: true
-links:
-  - name: back
-    route: /portfolio
+synopsis: A simple shopping list built on Sails.js and Knockout.js
 ---
 {:.externals}
  - [Github](https://github.com/sstadt/shoplist){:.button}

@@ -5,9 +5,7 @@ thumbnail: /projects/forge-ui/share-ForgeUI.jpg
 heroImage: "/projects/forge-ui/hero-ForgeUI.jpg?v=2"
 order: 7
 lightNav: true
-links:
-  - name: back
-    route: /portfolio
+synopsis: A light weight collection of customizable Vue.js components
 ---
 {:.externals}
  - [Docs](http://sstadt.github.io/forge-ui/){:.button}

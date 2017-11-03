@@ -5,9 +5,7 @@ thumbnail: /projects/l2/share-yale.jpg
 heroImage: "/projects/l2/hero-l2.jpg?v=1"
 headerImage: "/projects/l2/header-yale.png?v=2"
 order: 5
-links:
-  - name: back
-    route: /portfolio
+synopsis: Home page for Yale Repertory Theatre
 ---
 {:.externals}
  - [Live Site](https://www.yalerep.org/){:.button}

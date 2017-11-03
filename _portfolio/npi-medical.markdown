@@ -5,9 +5,7 @@ thumbnail: /projects/solid/share-NPIMedical.jpg
 heroImage: "/projects/solid/hero-Solid.jpg?v=1"
 headerImage: /projects/solid/header-NPIMedical.png
 order: 2
-links:
-  - name: back
-    route: /portfolio
+synopsis: Home page for NPI Medical
 ---
 {:.externals}
  - [Live Site](http://spitfiresmartscan.org/){:.button}

@@ -5,9 +5,7 @@ thumbnail: /projects/solid/share-InlinePlastics.jpg
 heroImage: "/projects/solid/hero-Solid.jpg?v=1"
 headerImage: /projects/solid/header-InlinePlastics.png
 order: 1
-links:
-  - name: back
-    route: /portfolio
+synopsis: Home page for Inline Plastics corp.
 ---
 {:.externals}
  - [Live Site](http://spitfiresmartscan.org/){:.button}
