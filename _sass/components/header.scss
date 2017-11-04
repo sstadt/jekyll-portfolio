@@ -55,6 +55,17 @@ header {
     }
   }
 
+  .escape-hatch {
+    position: absolute;
+    left: $global-gutter / 2;
+    top: 0;
+    padding-top: $global-gutter / 2; // keeps the page from jumping when toggling the menu
+
+    @include phone-only() {
+      left: auto;
+    }
+  }
+
   &.light {
     h1, p {
       color: white;
@@ -70,11 +81,6 @@ header {
     }
 
     .escape-hatch {
-      position: absolute;
-      top: 0;
-      left: $global-gutter / 2;
-      top: $global-gutter / 2;
-
       svg {
         fill: white;
       }

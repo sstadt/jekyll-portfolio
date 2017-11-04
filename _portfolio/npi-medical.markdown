@@ -2,7 +2,7 @@
 layout: article
 title: NPI Medical
 thumbnail: /projects/solid/share-NPIMedical.jpg
-heroImage: "/projects/solid/hero-Solid.jpg?v=1"
+heroImage: "/projects/solid/hero-solid.jpg?v=1"
 headerImage: /projects/solid/header-NPIMedical.png
 order: 2
 synopsis: Home page for NPI Medical

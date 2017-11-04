@@ -67,5 +67,5 @@ $block-grid-max-cols: 12;
 }
 
 @include phone-only { @include block-grids('small') }
-@include tablet-only { @include block-grids('medium') }
+@include tablet-up { @include block-grids('medium') }
 @include desktop-up { @include block-grids('large') }

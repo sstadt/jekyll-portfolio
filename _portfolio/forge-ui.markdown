@@ -21,6 +21,6 @@ Forge UI is a lightweight collection of simple Vue.js components aimed as flexib
  - Vue.js
  - Karma/Jasmine
 
-Forge UI is one of my ongoing pet projects. I've learned a lot from using frameworks like Foundation and Bootstrap, and there's a special place in my heart for them. Nowadays, though, I typically only need a set of basic functionality to be repeated. Most application components tend to be custom, and I've increasingly grown to shy away from a full front end framework when I really only want a grid system and some basic modals, alerts, and form validation.
+Forge UI is one of my ongoing pet projects. I've learned a lot from using frameworks like Foundation and Bootstrap, and there's a special place in my heart for them. Nowadays, though, I typically only need a set of basic functionality to be repeated. Most application components tend to be custom, and I've increasingly grown to shy away from a full front end framework that can bloat asset files with unused components and utility classes.
 
-Currently, Forge UI integrates with Foundation 6 for much of it's base styling, but moving forward this requirement will be phased out in favor of a slimmer set of CSS components built for flexbox and the incoming CSS grid that I'm developed while building the [Star Wars Game Table](/portfolio/game-table).
+To solve this problem, ForgeUI integrates a simplistic set of components meant to solve all the typical UI components that get built out in most projects with a basic set of CSS components to solve common methods of structuring markup. Components are easily customizable through template injection and a comprehensive quite of SCSS variables. Everything a growing web application needs.

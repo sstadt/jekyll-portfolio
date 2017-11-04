@@ -16,36 +16,68 @@ a {
 p {
   margin: $global-padding 0;
   font-size: rem-calc($p-font-size);
+
+  @include phone-only() {
+    font-size: rem-calc($p-small-font-size);
+  }
 }
 
 h1 {
   font-size: rem-calc($h1-font-size);
+
+  @include phone-only() {
+    font-size: rem-calc($h1-small-font-size);
+  }
 }
 
 h2 {
   font-size: rem-calc($h2-font-size);
+
+  @include phone-only() {
+    font-size: rem-calc($h2-small-font-size);
+  }
 }
 
 h3 {
   font-size: rem-calc($h3-font-size);
+
+  @include phone-only() {
+    font-size: rem-calc($h3-small-font-size);
+  }
 }
 
 h4 {
   font-size: rem-calc($h4-font-size);
+
+  @include phone-only() {
+    font-size: rem-calc($h4-small-font-size);
+  }
 }
 
 h5 {
   font-size: rem-calc($h5-font-size);
+
+  @include phone-only() {
+    font-size: rem-calc($h5-small-font-size);
+  }
 }
 
 h6 {
   font-size: rem-calc($h6-font-size);
+
+  @include phone-only() {
+    font-size: rem-calc($h6-small-font-size);
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin: $global-padding 0;
   font-family: $header-font-family;
+
+  @include phone-only() {
+    margin-bottom: $global-padding / 2;
+  }
 }
 
 .text-left {

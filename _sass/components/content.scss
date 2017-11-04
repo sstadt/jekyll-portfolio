@@ -49,9 +49,11 @@ body > .content {
   }
 
   p {
-    margin: 2rem 0;
-    font-size: rem-calc($p-font-size * $content-type-mod);
-    line-height: 2.5rem;
+    @include tablet-up() {
+      margin: 2rem 0;
+      font-size: rem-calc($p-font-size * $content-type-mod);
+      line-height: 2.5rem;
+    }
 
     &.intro {
       font-weight: bold;

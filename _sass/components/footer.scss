@@ -8,6 +8,7 @@ footer {
     display: flex;
     flex: 2;
     align-items: center;
+    padding: 0 $global-gutter;
 
     & > * {
       display: flex;

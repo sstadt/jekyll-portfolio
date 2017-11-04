@@ -2,7 +2,7 @@
 layout: article
 title: Inline Plastics
 thumbnail: /projects/solid/share-InlinePlastics.jpg
-heroImage: "/projects/solid/hero-Solid.jpg?v=1"
+heroImage: "/projects/solid/hero-solid.jpg?v=1"
 headerImage: /projects/solid/header-InlinePlastics.png
 order: 1
 synopsis: Home page for Inline Plastics corp.

@@ -3,9 +3,13 @@
   width: 100%;
 
   p.intro {
-    font-size: rem-calc($p-font-size * $content-type-mod);
-    line-height: 2.5rem;
     font-weight: normal;
     margin-top: 0;
+    line-height: 1.6;
+
+    @include tablet-up() {
+      font-size: rem-calc($p-font-size * $content-type-mod);
+      line-height: 2.5rem;
+    }
   }
 }

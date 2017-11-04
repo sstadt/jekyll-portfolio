@@ -2,7 +2,7 @@
 layout: article
 title: Spitfire Smartscan
 thumbnail: /projects/solid/share-SpitfireSmartscan.jpg
-heroImage: "/projects/solid/hero-Solid.jpg?v=1"
+heroImage: "/projects/solid/hero-solid.jpg?v=1"
 headerImage: "/projects/solid/header-SpitfireSmartscan.png?v=1"
 order: 4
 synopsis: A social-driven communication quiz by Spitfire
