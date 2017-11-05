@@ -1,0 +1,5 @@
+
+<header {% if page.lightNav %}class="light"{% endif %} style="background-image: url({{ site.s3_url }}{{ page.heroImage }});">
+  {% include menu.html %}
+  {% if page.headerImage %}<img src="{{ site.s3_url }}{{ page.headerImage }}" class="header-image" />{% endif %}
+</header>

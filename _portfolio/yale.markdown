@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: project
 title: Yale Repertory Theatre
 thumbnail: /projects/l2/share-yale.jpg
 heroImage: "/projects/l2/hero-l2.jpg?v=1"

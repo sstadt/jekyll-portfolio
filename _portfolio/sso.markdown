@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: project
 title: Sydney Symphony Orchestra
 thumbnail: /projects/l2/share-sso.jpg
 heroImage: "/projects/l2/hero-l2.jpg?v=1"

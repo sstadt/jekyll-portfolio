@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: project
 title: Spitfire Smartscan
 thumbnail: /projects/solid/share-SpitfireSmartscan.jpg
 heroImage: "/projects/solid/hero-solid.jpg?v=1"

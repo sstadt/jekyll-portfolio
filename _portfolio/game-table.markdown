@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: project
 title: Game Table
 thumbnail: /projects/game-table/share-GameTable.jpg
 heroImage: /projects/game-table/hero-GameTable.jpg

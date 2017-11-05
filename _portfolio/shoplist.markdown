@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: project
 title: Shoplist
 thumbnail: /projects/shoplist/share-shoplist.jpg
 heroImage: /projects/shoplist/hero-shoplist.jpg
