@@ -6,7 +6,7 @@ title: "Centralize Your Sails.js Sockets with a Pipe"
 lightNav: true
 date: 2017-06-12 10:00:00 -0500
 ---
-{.intro}
+{:.intro}
 When building a realtime application, [Sails.js integration with Socket.io](https://sailsjs.com/documentation/reference/web-sockets/socket-client) can make your like a lot easier. Sails does a lot to help set up web socket connections and streamline model update notifications to connected users, but being a Back End framework, it doesn't offer a whole lot in the way of organizing those updates on the front end. But fear not! You can easily take control of overzealous and scattered socket handlers with a simple pipe!
 
 A couple years ago while watching the Overwatch developer panel at [Blizzcon](https://blizzcon.com/) one of the developers talked about organizing client updates through a game "pipe". The pipe was always there, streaming game data from the servers, and if a part of the interface needed some part of the data stream they would put in a "tap" and get notifications for that type of data.
@@ -33,7 +33,7 @@ io.socket.on('game', function (message) {
 });
 {% endhighlight %}
 
-It worked, but it was terrible. Just a series if if/else statements designed as a catch all for the disparate types of data I might bring back from a socket update. What made things even worse was that I had no good place to stick the socketHandler code, so it ended up living in it's own file outside of the Vue.js component I was using for this example, making context a tedious thing to keep track of and complicating testing.
+It worked, but it was terrible. Just a series of if/else statements designed as a catch all for the disparate types of data I might bring back from the back end. What made things even worse was that I had no good place to stick the socketHandler code, so it ended up living in it's own file outside of the Vue.js component I was using for the application logic, making context a tedious thing to keep track of and complicating testing.
 
 The next best solution, however, was to start spreading socket handlers throughout my scripts and handle them all individually. That might be more readable, but it's not very DRY. So I decided to give the overwatch pipe a try. After some tears and refactoring my application logic was much better organized and far more readable.
 
@@ -52,11 +52,11 @@ GamePipe.on('mapUpdated', this.mapUpdated);
 
 Much better!
 
-Context is easier to keep track of. Responses from the back end are passed to the pipe handler directly allowing for individualized reactions to response data with a nightmare of if/else statements. And now game logic can logically live within the game component instead of a separate file, so testing becomes much simpler!
+Context is easier to keep track of. Responses from the back end are passed to the pipe handler directly allowing for individualized reactions to response data without the nightmarish set of if/else statements. And now game logic can logically live within the game component instead of a separate file, so testing becomes much simpler.
 
 ## Project Setup
 
-What follows is a simple todo list app that combines a couple different types of socket updates together to help show the usefulness of my `Pipe` class. If you'd like to skip ahead and just grab the code, [click here](#pipe_class)!
+To show how a pipe can be built, let's build a simple todo list app. In doing so, we'll combine a couple different types of socket updates together to help show the usefulness of the pipe architecture. If you'd like to skip ahead and just grab the code, [click here](#pipe_class)!
 
 To start, we need a new sails app. While we're at it let's go ahead and add a collection.
 
@@ -66,7 +66,7 @@ cd todo-pipe
 sails generate api todo
 {% endhighlight %}
 
-Just a couple more housekeeping items to take care of, open up `/config/models.js` and uncomment line 30, `migrate: 'alter'`. Otherwise, sails will badger you about that setting every time you life the application. You can connect to a database if you like, but that is beyond the scope of this tutorial. Otherwise we'll be using the default file storage for our collections.
+Just a couple more housekeeping items to take care of, open up `/config/models.js` and uncomment line 30, `migrate: 'alter'`. Otherwise, sails will badger you about that setting every time you lift the application. You can connect to a database if you like, but that is beyond the scope of this tutorial. This tutorial will be using the default file storage for our collections.
 
 One last thing before we get going is to overwrite `/views/homepage.ejs` with the following markup:
 
@@ -92,11 +92,11 @@ One last thing before we get going is to overwrite `/views/homepage.ejs` with th
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% endhighlight %}
 
-This sets us up with an `app.js` file to put our application code in, some markup to key off of, and jQuery to build some interactions. Typically you'll want to use a pipe with a front end framework like Vue.js or React, but for this example we'll be using jQuery to get things up and running with a little less boilerplate.
+This sets us up with [Foundation](https://foundation.zurb.com/sites/docs/) for some quick CSS, some markup to key off of, and [jQuery](http://api.jquery.com/) to build some interactions. Typically you'll want to use a pipe with a front end framework like Vue.js or React to better organize your application, but for this example we'll be using jQuery to get things up and running with a little less boilerplate.
 
-At this point we should be able to lift the application by running `sails lift` in the. You'll then be able to see our budding application at [http://localhost:1337/](http://localhost:1337/).
+At this point we should be able to lift the application by running `sails lift` in the root of the project. You'll then be able to see our budding application at [http://localhost:1337/](http://localhost:1337/).
 
-{.note}
+{:.note}
 Whenever you make changes to any of the API files, you'll need to restart the app by hitting `ctrl+c` in the terminal and then running `sails lift` again.
 
 ## Basic Functionality
@@ -105,7 +105,7 @@ To get a good look at the before and after, let's build out the todo app with so
 
 Create a new file `/assets/js/app.js` and let's set up our basic todo application:
 
-{% highlight html %}
+{% highlight javascript %}
 (function ($, io) {
   var $itemName = $('#item_name');
   var $itemList = $('.js-item-list');
@@ -220,12 +220,12 @@ module.exports = {
 
 Now the app should work exactly the same as before, but we've set up subscriptions in the get and create methods so that all connected users will be able to listen for updates on the model. While Sails sets up blueprint routes for these operations for us, having these custom controller actions will allow us to dispatch nitifications in the next step.
 
-{.warning}
+{:.warning}
 To set up watchers for adding items to the list, we would need to have a model to subscribe to that can push notifications to the user. For the sake of brevity, we'll be restricting this app to update and destroy notifications.
 
 ## Setting up Notifications
 
-Now that we have a place on the backend actions, let's add some notifications to them. Open up `/api/controllers/TodoController.js` and update the `update` and `destroy` actions to look like this:
+Now that we have a place on the backend actions to inject code, let's add some notifications. Open up `/api/controllers/TodoController.js` and update the `update` and `destroy` actions to look like this:
 
 {% highlight javascript %}
 module.exports = {
@@ -266,7 +266,7 @@ module.exports = {
 };
 {% endhighlight %}
 
-We've added some notifications using the socket.io integration Sails ships with. The `Model.message()` method will dispatch a socket update to all connected isers that have subscribed to the instance of the Todo model with an ID that matched the first argument passed to the `message()` function. The second argument passed to `message` is the data object that the socket client will receive on the front end. Let break down the object we're sending a little bit.
+We've added some notifications using the socket.io integration Sails ships with. The `Model.message()` method will dispatch an update to all connected sockets that have subscribed to the instance of the Todo model with an ID that matched the first argument passed to the `message()` function. The second argument passed to `message` is the data object that the socket client will receive on the front end. Let break down the object we're sending a little bit.
 
 {% highlight javascript %}
 {
