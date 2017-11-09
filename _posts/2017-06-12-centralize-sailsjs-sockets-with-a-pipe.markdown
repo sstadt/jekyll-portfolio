@@ -329,3 +329,58 @@ But you can already see how different types of requests can start contributing t
 It is time at long last to clean this up with a pipe!
 
 ## new Pipe('model')
+
+Let's add a new JavaScript file, `/assets/js/_Pipe.js`. I've prepended the underscore to make sure this file gets added to the DOM *before* `app.js`, but if you prefer, you can configure the asset ordering in `/tasks/pipeline.js`. Drop the following code into `_Pipe.js` and then restart your Sails app.
+
+{% highlight javascript %}
+class Pipe {
+  constructor(model) {
+    this.handlers = {};
+
+    io.socket.on(model, (message) => {
+      if (!message.data.type) {
+        console.error('Socket message does not have a type');
+        return;
+      }
+
+      if (this.handlers[message.data.type]) {
+        this.handlers[message.data.type](message.data.data);
+      }
+    });
+  }
+
+  on(type, callback) {
+    this.handlers[type] = callback;
+  }
+}
+{% endhighlight %}
+
+Let's break this down real quick...
+
+The constructor takes a single string argument `model`. This is passed to the `io.socket.on` method much like we've been doing manually so far. The constructor will register a listener for the model that's passed in. Any socket messages received by the handler will be checked for type - which we added to all our `message()` calls on the back end. If a handler has been registered to the Pipe, it will pass the data received from the socket message to the handler's callback function.
+
+To register a callback to the Pipe, we can call the `on()` method, which takes a `type` and `callback` method which are a string and function respectively.
+
+Now that we have a pipe in place we can update our code to use the new class like so:
+
+{% highlight javascript %}
+function itemUpdated(data) {
+  var $item = $itemList.find(`[data-id="${data.item.id}"]`);
+  if (data.item.checked === true) $item.addClass('checked');
+}
+
+function itemDestroyed(data) {
+  $itemList.find(`[data-id="${data.itemId}"]`).closest('li').remove();
+}
+
+// notifications
+var todoPipe = new Pipe('todo');
+todoPipe.on('itemUpdated', itemUpdated);
+todoPipe.on('itemDestroyed', itemDestroyed);
+{% endhighlight %}
+
+So we've completely replaced the notification handling with calls to `Pipe.on`, making our handlers more consistent, and more readable. We've also updated the handler functions to assume we're receiving the raw response data for better consistency.
+
+While this example app is not necessarily large enough to see some real optimization using this technique, any sails app that relies heavily on sockets could see a huge amount of optimization and code consolidation using this, or a similar technique. Not only can this help to clean up any number of socket handlers, but the Pipe class can now be used as a single point of configuration for any middleware you might want to add to your front end code like CSRF or JWT token management, or any number of third party authentication or API calls.
+
+Like this solution or have a better one? Let me know in the comments below!
