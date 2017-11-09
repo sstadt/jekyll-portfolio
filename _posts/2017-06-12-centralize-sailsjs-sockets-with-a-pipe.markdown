@@ -66,9 +66,9 @@ cd todo-pipe
 sails generate api todo
 {% endhighlight %}
 
-Just a couple more housekeeping items to take care of, open up `/config/models.js` and uncomment line 30, `migrate: 'alter'`. Otherwise, sails will badger you about that setting every time you lift the application. You can connect to a database if you like, but that is beyond the scope of this tutorial. This tutorial will be using the default file storage for our collections.
+Just a couple more housekeeping items to take care of, open up **/config/models.js** and uncomment line 30, `migrate: 'alter'`. Otherwise, sails will badger you about that setting every time you lift the application. You can connect to a database if you like, but that is beyond the scope of this tutorial. This tutorial will be using the default file storage for our collections.
 
-One last thing before we get going is to overwrite `/views/homepage.ejs` with the following markup:
+One last thing before we get going is to overwrite **/views/homepage.ejs** with the following markup:
 
 {% highlight html %}
 <style>
@@ -94,16 +94,16 @@ One last thing before we get going is to overwrite `/views/homepage.ejs` with th
 
 This sets us up with [Foundation](https://foundation.zurb.com/sites/docs/) for some quick CSS, some markup to key off of, and [jQuery](http://api.jquery.com/) to build some interactions. Typically you'll want to use a pipe with a front end framework like Vue.js or React to better organize your application, but for this example we'll be using jQuery to get things up and running with a little less boilerplate.
 
-At this point we should be able to lift the application by running `sails lift` in the root of the project. You'll then be able to see our budding application at [http://localhost:1337/](http://localhost:1337/).
+At this point we should be able to lift the application by running **sails lift** in the root of the project. You'll then be able to see our budding application at [http://localhost:1337/](http://localhost:1337/).
 
 {:.note}
-Whenever you make changes to any of the API files, you'll need to restart the app by hitting `ctrl+c` in the terminal and then running `sails lift` again.
+Whenever you make changes to any of the API files, you'll need to restart the app by hitting **ctrl+c** in the terminal and then running **sails lift** again.
 
 ## Basic Functionality
 
 To get a good look at the before and after, let's build out the todo app with some simple jQuery callbacks.
 
-Create a new file `/assets/js/app.js` and let's set up our basic todo application:
+Create a new file **/assets/js/app.js** and let's set up our basic todo application:
 
 {% highlight javascript %}
 (function ($, io) {
@@ -157,11 +157,11 @@ Create a new file `/assets/js/app.js` and let's set up our basic todo applicatio
 
 That's a good amount of code so let's go through what's happening so far.
 
-First, we cache some jQuery objects so we can reference them easily. The `addItemToDOM` function will be a shortcut for adding new items to our todo list once they've been received from sails. Then we have handlers for submitting a new item, and updating or deleting an item. Pretty simplistic, but this will give us a couple different types of messages to differentiate between with our pipe later on.
+First, we cache some jQuery objects so we can reference them easily. The `addItemToDOM()` function will be a shortcut for adding new items to our todo list once they've been received from sails. Then we have handlers for submitting a new item, and updating or deleting an item. Pretty simplistic, but this will give us a couple different types of messages to differentiate between with our pipe later on.
 
-So this application works well enough, but it would currently only work for a single user because we're handling all of our updates through post responses from the back end. In a realtime app this would only be half of the update lifecycle within the application. To make this a realtime app usable by more than one person, we need to move our update handlers out to `io.socket.on` callback functions.
+So this application works well enough, but it would currently only work for a single user because we're handling all of our updates through post responses from the back end. In a realtime app this would only be half of the update lifecycle within the application. To make this a realtime app usable by more than one person, we need to move our update handlers out to `io.socket.on()` callback functions.
 
-Before we can do that, though, we'll need to set up custom controller actions that will dispatch socket messages to listeners, and subscribe the user to the model. Open up `/api/controllers/TodoController.js` and add the following actions to the controller:
+Before we can do that, though, we'll need to set up custom controller actions that will dispatch socket messages to listeners, and subscribe the user to the model. Open up **/api/controllers/TodoController.js** and add the following actions to the controller:
 
 {% highlight javascript %}
 module.exports = {
@@ -218,14 +218,14 @@ module.exports = {
 };
 {% endhighlight %}
 
-Now the app should work exactly the same as before, but we've set up subscriptions in the get and create methods so that all connected users will be able to listen for updates on the model. While Sails sets up blueprint routes for these operations for us, having these custom controller actions will allow us to dispatch nitifications in the next step.
+Now the app should work exactly the same as before, but we've set up subscriptions in the get and create methods so that all connected users will be able to listen for updates on the model. While Sails sets up blueprint routes for these operations for us, having these custom controller actions will allow us to dispatch notifications in the next step.
 
 {:.warning}
 To set up watchers for adding items to the list, we would need to have a model to subscribe to that can push notifications to the user. For the sake of brevity, we'll be restricting this app to update and destroy notifications.
 
 ## Setting up Notifications
 
-Now that we have a place on the backend actions to inject code, let's add some notifications. Open up `/api/controllers/TodoController.js` and update the `update` and `destroy` actions to look like this:
+Now that we have a place on the backend actions to inject code, let's add some notifications. Open up **/api/controllers/TodoController.js** and update the **update** and **destroy** actions to look like this:
 
 {% highlight javascript %}
 module.exports = {
@@ -266,7 +266,7 @@ module.exports = {
 };
 {% endhighlight %}
 
-We've added some notifications using the socket.io integration Sails ships with. The `Model.message()` method will dispatch an update to all connected sockets that have subscribed to the instance of the Todo model with an ID that matched the first argument passed to the `message()` function. The second argument passed to `message` is the data object that the socket client will receive on the front end. Let break down the object we're sending a little bit.
+We've added some notifications using the socket.io integration Sails ships with. The `Model.message()` method will dispatch an update to all connected sockets that have subscribed to the instance of the Todo model with an ID that matched the first argument passed to the `message()` function. The second argument passed to `message()` is the data object that the socket client will receive on the front end. Let break down the object we're sending a little bit.
 
 {% highlight javascript %}
 {
@@ -277,13 +277,13 @@ We've added some notifications using the socket.io integration Sails ships with.
 
 Typically with Sails.js you might use some of the more specialized socket methods like `Model.update()` or `Model.destroy()`. however, these come with some additional baggage that we don't necessarily need, so we'll be using the more generic `Model.message()` to allow for a little more flexibility.
 
-The object we're dispatching has a couple attributes, `type` and `data`.
+The object we're dispatching has a couple attributes, **type** and **data**.
 
 You might think we only need the data, but in order to streamline all updates into a single pipe we need to be more consistent with the notifications we're sending. Since we'll also need some level of granularity to account for different types of responses I've packaged response specific data into the data property of the notification object. The type will come into play later on when we implement the Pipe class to wrangle our disparate notifications.
 
-To make sure our updates will be received by users other than ourselves, we'll need to pull our callback handlers out of the `io.socket.post` callbacks and build out some `io.socket.on` handlers to update the page. This will allow application updates to come through our notifications instead of immediately after making a post request.
+To make sure our updates will be received by users other than ourselves, we'll need to pull our callback handlers out of the `io.socket.post()` callbacks and build out some `io.socket.on()` handlers to update the page. This will allow application updates to come through our notifications instead of immediately after making a post request.
 
-Switch over to `/assets/js/app.js` and let's post callbacks out into a socket update handler:
+Switch over to **/assets/js/app.js** and let's post callbacks out into a socket update handler:
 
 {% highlight javascript %}
 // ...
@@ -330,7 +330,7 @@ It is time at long last to clean this up with a pipe!
 
 ## new Pipe('model')
 
-Let's add a new JavaScript file, `/assets/js/_Pipe.js`. I've prepended the underscore to make sure this file gets added to the DOM *before* `app.js`, but if you prefer, you can configure the asset ordering in `/tasks/pipeline.js`. Drop the following code into `_Pipe.js` and then restart your Sails app.
+Let's add a new JavaScript file, **/assets/js/_Pipe.js**. I've prepended the underscore to make sure this file gets added to the DOM *before* **app.js**, but if you prefer, you can configure the asset ordering in **/tasks/pipeline.js**. Drop the following code into **_Pipe.js** and then restart your Sails app.
 
 {% highlight javascript %}
 class Pipe {
@@ -357,9 +357,9 @@ class Pipe {
 
 Let's break this down real quick...
 
-The constructor takes a single string argument `model`. This is passed to the `io.socket.on` method much like we've been doing manually so far. The constructor will register a listener for the model that's passed in. Any socket messages received by the handler will be checked for type - which we added to all our `message()` calls on the back end. If a handler has been registered to the Pipe, it will pass the data received from the socket message to the handler's callback function.
+The constructor takes a single string argument **model**. This is passed to the `io.socket.on` method much like we've been doing manually so far. The constructor will register a listener for the model that's passed in. Any socket messages received by the handler will be checked for type - which we added to all our `message()` calls on the back end. If a handler has been registered to the Pipe, it will pass the data received from the socket message to the handler's callback function.
 
-To register a callback to the Pipe, we can call the `on()` method, which takes a `type` and `callback` method which are a string and function respectively.
+To register a callback to the Pipe, we can call the `on()` method, which takes a **type** and **callback** method which are a string and function respectively.
 
 Now that we have a pipe in place we can update our code to use the new class like so:
 
@@ -379,8 +379,10 @@ todoPipe.on('itemUpdated', itemUpdated);
 todoPipe.on('itemDestroyed', itemDestroyed);
 {% endhighlight %}
 
-So we've completely replaced the notification handling with calls to `Pipe.on`, making our handlers more consistent, and more readable. We've also updated the handler functions to assume we're receiving the raw response data for better consistency.
+So we've completely replaced the notification handling with calls to `Pipe.on()`, making our handlers more consistent, and more readable. We've also updated the handler functions to assume we're receiving the raw response data for better consistency.
 
 While this example app is not necessarily large enough to see some real optimization using this technique, any sails app that relies heavily on sockets could see a huge amount of optimization and code consolidation using this, or a similar technique. Not only can this help to clean up any number of socket handlers, but the Pipe class can now be used as a single point of configuration for any middleware you might want to add to your front end code like CSRF or JWT token management, or any number of third party authentication or API calls.
 
 Like this solution or have a better one? Let me know in the comments below!
+
+View the code on [Github](https://github.com/sstadt/todo-pipe).
