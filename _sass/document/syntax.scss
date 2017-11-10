@@ -148,6 +148,10 @@
     color: $sx-keyword-type-color;
   }
 
+  .k, .kd {
+    color: $sx-keyword-declaration;
+  }
+
   .m, .mf, .mh, .mi, .mo {
     color: $sx-literal-number;
   }
