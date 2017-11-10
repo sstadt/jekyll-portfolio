@@ -103,10 +103,11 @@
   //   font-weight: bold;
   // }
 
-  .err {
-    color: $sx-error-color;
-    background-color: $sx-error-bg;
-  }
+  // this is disabled until there is es6 highlighting support in rouge
+  // .err {
+  //   color: $sx-error-color;
+  //   background-color: $sx-error-bg;
+  // }
 
   .gd {
     background-color: $sx-generic-deleted-bg;
