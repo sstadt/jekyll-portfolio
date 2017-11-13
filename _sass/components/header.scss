@@ -29,12 +29,16 @@ header {
 
   .header-content {
     position: absolute;
-    top: 0;
     max-width: 100%;
     padding-left: $global-gutter / 2;
     padding-right: $global-gutter / 2;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 10px;
+
+    @include tablet-up() {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
 
     @include tablet-up() {
       left: 50%;

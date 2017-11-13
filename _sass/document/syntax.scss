@@ -85,6 +85,10 @@
     padding: 2rem $global-gutter;
     width: 100%;
     max-width: $content-width;
+
+    code {
+      word-wrap: break-word;
+    }
   }
 
   .gd, .gd .x, .gi, .gi .x {

@@ -16,6 +16,7 @@ a {
 p {
   margin: $global-padding 0;
   font-size: rem-calc($p-font-size);
+  line-height: 1.4;
 
   @include phone-only() {
     font-size: rem-calc($p-small-font-size);
