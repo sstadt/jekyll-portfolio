@@ -5,8 +5,9 @@
 <meta property="fb:app_id" content="148554715762522" />
 <meta property="og:url" content="https://www.scottstadt.com{{ route }}" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ScottStadt.com{% if page.title %} - {{ page.title }}{% endif %}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}ScottStadt.com" />
 <meta property="og:image" content="{{ site.s3_url }}{{ page.thumbnail }}" />
+<meta property="og:site_name" content="ScottStadt.com" />
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 <meta property="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
