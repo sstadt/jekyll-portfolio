@@ -4,7 +4,7 @@ heroImage: /posts/sails-pipe/hero-SailsPipe.jpg?v=1
 thumbnail: /posts/sails-pipe/share-SailsPipe.jpg
 title: "Centralize Your Sails.js Sockets with a Pipe"
 lightNav: true
-date: 2017-06-12 10:00:00 -0500
+date: 2017-11-12 10:00:00 -0500
 ---
 {:.intro}
 When building a realtime application, [Sails.js integration with Socket.io](https://sailsjs.com/documentation/reference/web-sockets/socket-client) can make your like a lot easier. Sails does a lot to help set up web socket connections and streamline model update notifications to connected users, but being a Back End framework, it doesn't offer a whole lot in the way of organizing those updates on the front end. But fear not! You can easily take control of overzealous and scattered socket handlers with a simple pipe!
