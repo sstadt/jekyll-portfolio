@@ -67,10 +67,13 @@
   background-color: $code-highlight-bg;
   color: $code-highlight-color;
   font-size: 0.85em;
+  border: 1px solid $sx-border;
 }
 
 .highlight {
   background: $sx-bg;
+  border-top: 1px solid $sx-border;
+  border-bottom: 1px solid $sx-border;
   margin: 0 0 $global-gutter;
   width: 100vw;
   position: relative;
@@ -149,7 +152,7 @@
     color: $sx-generic-traceback-color;
   }
 
-  .kt {
+  .kt, .kr {
     color: $sx-keyword-type-color;
   }
 
