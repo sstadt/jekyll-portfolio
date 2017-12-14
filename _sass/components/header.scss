@@ -50,6 +50,20 @@ header {
     }
   }
 
+  .header-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $transparent-black;
+    padding: $global-gutter 0;
+
+    .heading {
+      margin: 0 auto;
+      padding: 0 $global-gutter;
+      color: #fff;
+    }
+  }
+
   .nav a {
     color: black;
 

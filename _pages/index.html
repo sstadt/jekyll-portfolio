@@ -1,13 +1,11 @@
 ---
-layout: default
-title: 'ScottStadt.com'
+layout: home
+title: 'Blog'
 permalink: /
-heroImage: '/hero-slicer.jpg?v=1'
-lightNav: true
 ---
 {% for post in site.posts %}
 <div class="article-preview clearfix">
-  <h3 class="heading">{{ post.title }}</h3>
+  {% if forloop.index != 1 %}<h3 class="heading">{{ post.title }}</h3>{% endif %}
   {{ post.excerpt }}
   <a href="{{ post.url }}" class="button float-right">Continue Reading</a>
 </div>

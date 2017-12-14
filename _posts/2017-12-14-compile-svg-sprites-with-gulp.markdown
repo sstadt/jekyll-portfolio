@@ -4,7 +4,7 @@ heroImage: /posts/svg-sprites/header-SVGStoreGulp.jpg
 thumbnail: /posts/svg-store/share-SVGStore.jpg
 title: "Compile Your SVG Sprites With Gulp"
 lightNav: true
-date: 2017-12-10 10:00:00 -0500
+date: 2017-12-14 10:00:00 -0500
 ---
 {:.intro}
 No matter what kind of app you're building, chances are you're going to need icons at some point. As of this writing, the best, most accessible method of working with icon sprites is to use SVG graphics. This can lead to a lot of tedious copy and paste of SVG code into a symbol library for optimization. Or... we could have gulp take care of that for us!

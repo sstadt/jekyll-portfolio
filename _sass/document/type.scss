@@ -92,3 +92,8 @@ h1, h2, h3, h4, h5, h6 {
 .text-center {
   text-align: center;
 }
+
+.date {
+  font-size: rem-calc(14);
+  color: $gray-light;
+}
