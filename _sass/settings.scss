@@ -17,6 +17,10 @@ $success: #3adb76;
 $warning: #ffae00;
 $alert: #cc4b37;
 
+// $off-white: #f3f3f9;
+$off-white: #fafaff;
+$charcoal: #282c34;
+
 
 // Typeography
 // ----------------------------------
@@ -83,6 +87,14 @@ $global-radius: 4px; // global border-radius
 $content-width: 960px;
 $header-width: 1280px;
 
+$footer-bg: $charcoal;
+$footer-anchor-color: #a7b3d8;
+
+$info-bg: #eaeaf7;
+$info-border: darken($info-bg, 5%);
+$warning-bg: #fbf4c1;
+$warning-border: darken($warning-bg, 20%);
+
 
 // Nav
 // ----------------------------------
@@ -112,17 +124,63 @@ $pill-color: white;
 $input-border: #ccc;
 
 
-// Syntax Highlighting
+// Syntax Highlighting - Dark
 // ----------------------------------
 
-$code-highlight-bg: #282c34;
-$code-highlight-color: #abb2bf;
+// $code-highlight-bg: #282c34;
+// $code-highlight-color: #abb2bf;
+//
+// $sx-bg: $code-highlight-bg;
+// $sx-color: $code-highlight-color;
+//
+// $sx-default-color: #9b869c;
+// $sx-comment-color: #5c6370;
+//
+// $sx-error-color: #a61717;
+// $sx-error-bg: #e3d2d2;
+//
+// $sx-generic-error-color: #aa0000;
+// $sx-generic-inserted-color: #ddffdd;
+// $sx-generic-inserted-specific-bg: #aaffaa;
+// $sx-generic-deleted-bg: #ffdddd;
+// $sx-generic-deleted-specific-bg: #ffdddd;
+// $sx-generic-output-color: #888;
+// $sx-generic-prompt-color: #555;
+// $sx-generic-subheading-color: #aaa;
+// $sx-generic-traceback-color: #aa0000;
+//
+// $sx-keyword-type-color: #445588;
+// $sx-keyword-declaration: #cd65df;
+//
+// $sx-literal-number: #cd9765;
+// $sx-literal-string: #95c077;
+// $sx-literal-regex: #56b6c2;
+// $sx-literal-symbol: #ee5860;
+//
+// $sx-name-global: #abb2bf;
+// $sx-name-attribute: #d19a66;
+// $sx-name-bulletin: #abb2bf;
+// $sx-name-class: #cd9765;
+// $sx-name-entity: #cd9765;
+// $sx-name-function: #61afef;
+// $sx-name-namespace: #cd9765;
+// $sx-name-tag: #db6a73;
+//
+// $sx-whitespace: #bbbbbb;
+
+
+// Syntax Highlighting - Light
+// ----------------------------------
+
+$code-highlight-bg: $off-white;
+$code-highlight-color: $charcoal;
 
 $sx-bg: $code-highlight-bg;
+$sx-border: darken($sx-bg, 5%);
 $sx-color: $code-highlight-color;
 
 $sx-default-color: #9b869c;
-$sx-comment-color: #5c6370;
+$sx-comment-color: #b9b9b9;
 
 $sx-error-color: #a61717;
 $sx-error-bg: #e3d2d2;
@@ -137,21 +195,21 @@ $sx-generic-prompt-color: #555;
 $sx-generic-subheading-color: #aaa;
 $sx-generic-traceback-color: #aa0000;
 
-$sx-keyword-type-color: #445588;
-$sx-keyword-declaration: #cd65df;
+$sx-keyword-type-color: #c75322;
+$sx-keyword-declaration: #b237c7;
 
-$sx-literal-number: #cd9765;
-$sx-literal-string: #95c077;
+$sx-literal-number: #00a910;
+$sx-literal-string: #00a910;
 $sx-literal-regex: #56b6c2;
-$sx-literal-symbol: #ee5860;
+$sx-literal-symbol: #000;
 
 $sx-name-global: #abb2bf;
-$sx-name-attribute: #d19a66;
-$sx-name-bulletin: #abb2bf;
-$sx-name-class: #cd9765;
-$sx-name-entity: #cd9765;
+$sx-name-attribute: #c75322;
+$sx-name-bulletin: #000;
+$sx-name-class: #445587;
+$sx-name-entity: #445587;
 $sx-name-function: #61afef;
-$sx-name-namespace: #cd9765;
-$sx-name-tag: #db6a73;
+$sx-name-namespace: #445587;
+$sx-name-tag: #454dd2;
 
 $sx-whitespace: #bbbbbb;

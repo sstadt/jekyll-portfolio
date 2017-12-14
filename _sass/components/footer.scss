@@ -1,6 +1,6 @@
 
 footer {
-  background-color: #deefff;
+  background-color: $footer-bg;
   margin-top: $global-gutter;
   padding: $global-gutter 0;
 
@@ -9,6 +9,15 @@ footer {
     flex: 2;
     align-items: center;
     padding: 0 $global-gutter;
+    color: $body-bg;
+
+    a, a:hover, a:active {
+      color: $footer-anchor-color;
+    }
+
+    a:hover {
+      border-color: $footer-anchor-color;
+    }
 
     .footer-content {
       align-items: center;
