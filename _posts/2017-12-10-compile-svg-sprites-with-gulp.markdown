@@ -1,7 +1,7 @@
 ---
 layout: article
-heroImage: /posts/sails-pipe/hero-SailsPipe.jpg?v=1
-thumbnail: /posts/sails-pipe/share-SailsPipe.jpg
+heroImage: /posts/svg-sprites/header-SVGStoreGulp.jpg
+thumbnail: /posts/svg-store/share-SVGStore.jpg
 title: "Compile Your SVG Sprites With Gulp"
 lightNav: true
 date: 2017-12-10 10:00:00 -0500
