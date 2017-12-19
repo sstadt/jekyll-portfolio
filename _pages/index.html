@@ -5,7 +5,9 @@ permalink: /
 ---
 {% for post in site.posts %}
 <div class="article-preview clearfix">
-  {% if forloop.index != 1 %}<h3 class="heading">{{ post.title }}</h3>{% endif %}
+  {% if forloop.index != 1 %}
+    <h3 class="heading">{{ post.title }}</h3>
+  {% endif %}
   {{ post.excerpt }}
   <a href="{{ post.url }}" class="button float-right">Continue Reading</a>
 </div>
