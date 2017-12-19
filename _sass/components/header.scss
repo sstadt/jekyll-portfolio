@@ -59,6 +59,7 @@ header {
 
     .heading {
       margin: 0 auto;
+      max-width: $content-width;
       padding: 0 $global-gutter;
       color: #fff;
     }
