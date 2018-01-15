@@ -4,7 +4,7 @@ heroImage: /posts/svg-sprites/header-SVGStoreGulp.jpg
 thumbnail: /posts/svg-store/share-SVGStore.jpg
 title: "Babelify Your Inline JavaScript with Gulp"
 lightNav: true
-date: 2017-12-14 10:00:00 -0500
+date: 2018-01-22 10:00:00 -0500
 ---
 {:.intro}
 Inlining critical CSS and JavaScript can seriously improve time to first render for above the fold content, but current tooling for JavaScript has an achilles heel: ES2015+ syntax. But don't let that stop you from optimizing your page load __and__ using the new features during development. We can build it... we have the technology!
@@ -72,7 +72,7 @@ var inline = require('gulp-inline-source');
 gulp.task('inline', function () {
   gulp.src('./index.html')
     .pipe(inline())
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('serve', serve('dist'));
@@ -155,7 +155,7 @@ function transpileString(source, context, next) {
 gulp.task('inline', function () {
   gulp.src('./index.html')
     .pipe(inline({ handlers: [ transpileString ] }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('serve', serve('dist'));
@@ -163,6 +163,8 @@ gulp.task('serve', serve('dist'));
 gulp.task('default', ['inline', 'serve']);
 {% endhighlight %}
 
+The `gulp-inline-source` plugin can take an array of handler functions to do a custom transform on items before they're injected into our markup. Taking advantage of this feature, we can pass a function that will check `source.type` to make sure we're working with a JavaScript file and then use `babel-core` to so a custom transform on `source.content` and pass the results along for inlining in our HTML.
 
+Now that we have out custom handler, running `gulp` once again should successfully compile the script into our page. Easy, right?
 
 View the code on [Github](https://github.com/sstadt/gulp-inline-babelify-demo).
