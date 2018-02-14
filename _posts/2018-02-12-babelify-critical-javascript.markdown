@@ -1,13 +1,13 @@
 ---
 layout: article
-heroImage: /posts/svg-sprites/header-SVGStoreGulp.jpg
-thumbnail: /posts/svg-store/share-SVGStore.jpg
-title: "Babelify Your Inline JavaScript with Gulp"
+heroImage: /posts/babelify-critical-css/header-KeepCalmAndBabel.jpg
+thumbnail: /posts/babelify-critical-css/share-KeepCalmAndBabel.jpg
+title: "Babelify Critical JavaScript with Gulp"
 lightNav: true
-date: 2018-01-22 10:00:00 -0500
+date: 2018-02-12 10:00:00 -0500
 ---
 {:.intro}
-Inlining critical CSS and JavaScript can seriously improve time to first render for above the fold content, but current tooling for JavaScript has an achilles heel: ES2015+ syntax. But don't let that stop you from optimizing your page load __and__ using the new features during development. We can build it... we have the technology!
+Inlining critical CSS and JavaScript can seriously improve time to first render for above the fold content, but current tooling for JavaScript has an achilles heel: ES2015+ syntax. Don't let that stop you from optimizing your page load __and__ using the new features during development. We can build it... we have the technology!
 
 If you're concerned at all about page load speed you've probably heard of the term [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/). In a nutshell, the aim is to speed up initial page rendering by inlining certain assets instead of making external requests for them. There is typically a larger focus on CSS for inlining critical path assets, but for smaller sites you may be thinking of inlining your JavaScript as well. One of the best tools for doing this with Gulp is [gulp-inline-source](https://www.npmjs.com/package/gulp-inline-source).
 
@@ -28,14 +28,14 @@ npm init -y
 npm install --save gulp gulp-serve gulp-inline-source
 {% endhighlight %}
 
-Now that we have all our initial packages set up, lets flesh out our basic app files. For the purpose of this demo we'll build out a simple VanillaJS clock as this will give us enough JavaScript that we can optimize a bit with some of ES2015's syntactic sugar. To start with, we'll need some simple markup to attach to in **index.html**:
+Now that all the initial packages are set up, it's time to flesh out the basic app files. For the purpose of this demo, I'll build out a simple VanillaJS clock. This will give us enough JavaScript that we can optimize a bit with some of ES2015's syntactic sugar. To start with, we'll need some simple markup to attach to in **index.html**:
 
 {% highlight html %}
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Babelify Your Inline JavaScript with Gulp</title>
+    <title>Babelify Your Critical JavaScript with Gulp</title>
   </head>
   <body>
     <p>The current time is: <span class="now"></span></p>
@@ -44,7 +44,7 @@ Now that we have all our initial packages set up, lets flesh out our basic app f
 </html>
 {% endhighlight %}
 
-This markup includes a `span.now` element that we can populate with the current time, and a reference to our script file where we'll do the work with JavaScript. That file will look like this:
+This markup includes a `span.now` element that we can populate with the current time, and a reference to the script file. That file will look like this:
 
 {% highlight javascript %}
 // script.js
@@ -82,7 +82,7 @@ gulp.task('default', ['inline', 'serve']);
 
 Now if you run gulp you should be able to view the clock in a browser at **localhost:3000**.
 
-TODO: add image of working clock.
+![The current time is: 20:49:11]({{ site.s3_url }}/posts/babelify-critical-css/interstitial-WorkingClock.jpg?v=1)
 
 We can also see the result of the **inline** task by checking out the freshly compiled **dist/index.html**:
 
@@ -100,7 +100,7 @@ We can also see the result of the **inline** task by checking out the freshly co
 </html>
 {% endhighlight %}
 
-This is awesome. We've completely eliminated the asset request for the external JavaScript file without being force to do JavaScript development in an HTML file.
+This is awesome. We've completely eliminated the asset request for the external JavaScript file without being forced to do JavaScript development in an HTML file.
 
 But what if we want to use ES2015 syntax in our javascript file? For this file in particular I might swatch out some `var` keywords for `const`, use a [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to generate the time, and replace the setInterval callback with an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). With those changes made, our **script.js** file now looks like this:
 
@@ -131,7 +131,7 @@ Let's start by installing some babel packages for transpiling the JavaScript cod
 npm install --save babel-core babel-preset-es2015 babel-preset-stage-0
 {% endhighlight %}
 
-The next step is adding our custom handler and passing that as an option to `gulp-inline-source`. The basic idea is that we want to intercept the content, transpile it to ES5, and then pass it along for the plugin to finish inlining the script. Here is the updated gulpfule:
+The next step is adding our custom handler and passing that as an option to `gulp-inline-source`. The basic idea is that we want to intercept the content, transpile it to ES5, and then pass it along for the plugin to finish inlining the script. Here is the updated gulpfile:
 
 {% highlight javascript %}
 var gulp = require('gulp');
@@ -163,8 +163,8 @@ gulp.task('serve', serve('dist'));
 gulp.task('default', ['inline', 'serve']);
 {% endhighlight %}
 
-The `gulp-inline-source` plugin can take an array of handler functions to do a custom transform on items before they're injected into our markup. Taking advantage of this feature, we can pass a function that will check `source.type` to make sure we're working with a JavaScript file and then use `babel-core` to so a custom transform on `source.content` and pass the results along for inlining in our HTML.
+The `gulp-inline-source` plugin can take an array of handler functions to do a custom transform on items before they're injected into the markup. Taking advantage of this feature, you can pass a function that will check `source.type` to target a file type, and then use `babel-core` to so a custom transform on `source.content` before passing the results along for inlining in an HTML file.
 
-Now that we have out custom handler, running `gulp` once again should successfully compile the script into our page. Easy, right?
+Now that we have our custom handler, running `gulp` once again should successfully compile the script into our page. Easy, right?
 
 View the code on [Github](https://github.com/sstadt/gulp-inline-babelify-demo).
