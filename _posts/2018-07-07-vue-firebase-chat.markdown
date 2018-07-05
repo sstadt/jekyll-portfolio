@@ -65,7 +65,7 @@ new Vue({
 
 To flesh this store out, we'll need to connect it to a firebase firestore, so head on over to the [firebase website](https://firebase.google.com/), set up an account and click **Go To Console** in the navigation to see your list of projects. Add a new project, and name it `Vuechat`.
 
-... TODO: image ...
+![Create New App]({{ site.s3_url }}/posts/vue-firebase-chat/interstitial-CreateApp.jpg)
 
 Once the project is created, open it up and click **Databases** from the left hand navigation. Despite our intention of building a real-time chat application, what we actually need to set up here is a Cloud Firestore, so click the **Get Started** link there to open up an empty firestore database.
 
@@ -85,11 +85,11 @@ Now that we\'ve locked down the application to authenticated users, we need to g
 
 Click **Authentication** from the sidebar navigation and open the **Sign-in Method** tab. From here you can enable all kinds of user authentication. As previously mentioned, let\'s enable **Google** authentication. Click **Save** to apply changes.
 
-... TODO: image ...
+![Google Authentication Configuration]({{ site.s3_url }}/posts/vue-firebase-chat/interstitial-GoogleAuthentication.jpg)
 
 The last step in setting up our firestore is to grab the configuration object and pull it into our application\'s data store. Click **Project Overview** in the sidebar navigation, and then the **Add Firebase to Your Web App** button. Copy the API configuration.
 
-... TODO: image ...
+![New App Configuration]({{ site.s3_url }}/posts/vue-firebase-chat/interstitial-AppConfiguration.jpg)
 
 Head on back to our project files and drop the configuration object into `src/store/index.js`. We\'ll also need to pull in `firebase` and add initialize the application. Adding the app to our store will allow use to work more easily with authentication later. At this point our store should look like this:
 
@@ -441,7 +441,7 @@ From the terminal, run `npm run dev` to start up the application in your browser
 
 At long last it\'s time to build out our realtime chat functionality. Now that we have an authenticated user, it\'s actually much simpler than you may think. Let\'s start by adding a new module to the data store at `src/store/messages.js`:
 
-The first thing we\ll need to do is add a reference to the database to the store. That way we\'ll be able to create individual collection references within store modules that will allow us to get data from the database and push new documents to the collection. Open up the `src/store/index.js` and update the lines that follow `` to the following:
+The first thing we\ll need to do is add a reference to the database to the store. That way we\'ll be able to create individual collection references within store modules that will allow us to get data from the database and push new documents to the collection. Open up the `src/store/index.js` and update the lines that follow `firebase.initializeApp(config);` to the following:
 
 {% highlight javascript %}
 // ... Vue and main Firestore import
@@ -612,7 +612,7 @@ If you recall, the `message/send` action will pull in those values, add a timest
 
 So now our chat application is up and running. Your app should be able to send messages and update the list when new messages are added. That being said, we still have one issue: if you add more messages than can fit in the dom they start running off below the chat message container... that\'s no good.
 
-... image ...
+![Chat Scroll Bug]({{ site.s3_url }}/posts/vue-firebase-chat/interstitial-ChatScrollBug.jpg)
 
 We can fix this by listening to `messages` data, and scrolling the div to the bottom after a new message is added. To make sure we perform the scroll _after_ the message has been added to the DOM, we can take advantage of the `Vue.nextTick` method. Add the following watcher to the component in `src/components/Chat.vue`:
 
