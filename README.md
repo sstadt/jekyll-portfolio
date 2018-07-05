@@ -8,3 +8,12 @@ Install docker and run the following command to make the site available at [loca
 ```bash
 docker-compose up -d
 ```
+
+## Liquid Helpers
+
+Create a information callout:
+
+```
+{:.note}
+Lorem ipsum
+```
