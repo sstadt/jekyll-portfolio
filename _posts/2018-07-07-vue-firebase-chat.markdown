@@ -1,10 +1,10 @@
 ---
 layout: article
-heroImage: /posts/babelify-critical-css/header-KeepCalmAndBabel.jpg
-thumbnail: /posts/babelify-critical-css/share-KeepCalmAndBabel.jpg
+heroImage: /posts/vue-firebase-chat/header-FirebaseChatting.jpg?v=1
+thumbnail: /posts/vue-firebase-chat/share-FirebaseChatting.jpg
 title: "Build a Chat Application with Vuex and Firebase"
 lightNav: true
-date: 2018-07-01 10:00:00 -0500
+date: 2018-07-07 10:00:00 -0500
 ---
 {:.intro}
 Building a real time chat application used to be such a pain. You need a back end and a server to run it on... a huge undertaking in it's own right. Not to mention polling techniques or a socket library to sync the front end with updates from the back end. These days that entire stack can be replaced with a database service like Firebase. So let's get to building!
