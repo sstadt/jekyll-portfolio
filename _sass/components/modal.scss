@@ -42,13 +42,12 @@
   left: 50%;
   top: 50%;
   width: 460px;
-  max-width: 100%;
+  max-width: calc(100% - #{$global-gutter});
   padding: $global-gutter;
   border-radius: $global-radius;
   transform: translateX(-50%) translateY(-50%) scale(1.5);
   transition: all 0.3s ease;
   background-color: $body-bg;
-  margin: 0 $global-gutter / 2;
 
   h2 {
     padding-right: 40px;
