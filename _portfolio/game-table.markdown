@@ -9,6 +9,7 @@ lightNav: true
 synopsis: A custom Game Table built for FFG Star Wars series of pen and paper RPGs
 ---
 {:.externals}
+ - [Demo Site](https://sw.scottstadt.com){:.button}
  - [Github](https://github.com/sstadt/sw-game-table){:.button}
 
 {:.intro}
