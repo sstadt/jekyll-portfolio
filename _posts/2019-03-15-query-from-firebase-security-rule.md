@@ -13,32 +13,40 @@ Let's say we have a Firestore with the following collections:
 {% highlight bash %}
 games
 ├── id
+├── gameMaster
 └── players
 
 quests
 ├── id
 ├── ...
-└── gameID
+└── gameId
 {% endhighlight %}
 
+implement basic rules for collections
 
+talk about strategies (adding players through cloud function, advantages/disadvantages)
 
-
-
-
-
-
+implement query based rule for quests
 
 {% highlight javascript %}
-// src/main.js
-import Vue from 'vue'
-import iconComponent from './icon.vue'
-
-Vue.component('icon', iconComponent);
-
-new Vue({
-  el: '#app'
-})
+service cloud.firestore {
+  function ownerOrPlayer() {
+    return request.auth.uid == resource.data.gameMaster || request.auth.uid in resource.data.players;
+  }
+  match /databases/{database}/documents {
+    match /games/{gameId} {
+      allow read: if ownerOrPlayer();
+      allow update, delete: if request.auth.uid == resource.data.gameMaster;
+      allow create;
+    }
+    match /quests/{questId} {
+      match /journalEntries/{entryId} {
+      	allow read: if get(/databases/$(database)/documents/games/$(gameId)).data.gameMaster == request.auth.uid || request.auth.uid in get(/databases/$(database)/documents/games/$(gameId)).data.players;
+				allow create, update, delete: if get(/databases/$(database)/documents/games/$(gameId)).data.gameMaster == request.auth.uid;
+      }
+    }
+  }
+}
 {% endhighlight %}
 
 
