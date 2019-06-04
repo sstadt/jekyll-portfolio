@@ -1,13 +1,13 @@
 ---
 layout: article
-heroImage: /posts/vue-firebase-chat/header-FirebaseChatting.jpg?v=1
-thumbnail: /posts/vue-firebase-chat/share-FirebaseChatting.jpg
+heroImage: /posts/vue-autosize-textarea/header-AutosizeTextarea.jpg
+thumbnail: /posts/vue-autosize-textarea/share-AutosizeTextarea.jpg
 title: "Build an Autosizing Textarea With Vue"
 lightNav: true
 date: 2019-05-03 10:00:00 -0500
 ---
 {:.intro}
-So you've seen those cool textarea components in frameworks like Vuetify and VueMaterial, but you don't want to install a full UI framework for your new project. That kind of affect is actually pretty easy to set up once you know a couple tricks.. so let's jump right in...
+So you've seen those cool textarea components in frameworks like Vuetify and VueMaterial, but you don't want to install a full UI framework for your new project. That kind of effect is actually pretty easy to set up once you know a couple tricks. So let's jump right in...
 
 ## Project Setup
 
@@ -27,7 +27,7 @@ cd vue-autosize-textarea
 npm install
 {% endhighlight %}
 
-First of all let's clear our work area by gutting `src/App.vue`. You can just replace the file contents with the following:
+First of all, let's clear our work area by gutting `src/App.vue`. You can just replace the file contents with the following:
 
 {% highlight html %}
 <!-- src/App.vue -->
@@ -82,11 +82,11 @@ We're only building a single component today, so let's make sure we build it in 
 
 Just a couple things worth noting here. 
 
-We'll ultimately need a wrapper class for the effect, so it'll be less rework to just do that now.
+We'll ultimately need a wrapper element for the effect, so it will be less rework to just do that now.
 
-Additionally, we have the `scoped` attribute on the styles. This may or may not be to your liking, but if you want to reuse any input styling it would probably make those easier to find by pulling them out into a more centralized compiled stylesheet. This is beyond the scope of this article.
+Additionally, we have the `scoped` attribute on the styles. If you prefer to reuse input styling it would probably make sense to pull that out into a more centralized compiled stylesheet. This is beyond the scope of this article.
 
-The last thing we need to do before getting into the meat of this component is pull this into `App.vue`.
+The last thing we need to do before getting into the meat of this component is pull it into `App.vue`.
 
 {% highlight html %}
 <!-- src/App.vue -->
@@ -117,13 +117,13 @@ The last thing we need to do before getting into the meat of this component is p
 </style>
 {% endhighlight %}
 
-In addition to pulling the textarea into the main app file, we're passing a value to the input via `v-model`. Our component isn't set up to do anything with that yet, but we can set that up in the component pretty easily. So let's take care of that as our first step in fleshing out the component.
+In addition to pulling the textarea into the main app file, we're passing a value to the input via `v-model`. Our component isn't set up to do anything with that yet, but we can set that up pretty easily. So let's take care of that as our first step in fleshing out the component.
 
 ## Two-Way Data Binding
 
 Head back over to `AutoTextarea.vue` and let's take care of that.
 
-The basic idea is pretty straightforward. We pull in content from the `v-model` declared in the parent as a prop, and assign that value to the component's data object. That data object attribute is then assigned to the textarea's `v-model` property, and each time that value gets updated we `$emit` an `input` event to the parent to let it know the value has been updated.
+The basic idea is pretty straightforward. We pull in content from the `v-model` declared in the parent as a prop, and assign that value to the component's data object. That data object attribute is then assigned to the textarea's `v-model` property. Each time that value gets updated we `$emit` an `input` event to the parent to let it know the value has been updated.
 
 Here is what the code looks like:
 
@@ -232,17 +232,17 @@ We'll need to add a few things to the component to make this happen. First, we n
 </style>
 {% endhighlight %}
 
-This works, but not perfectly. The textarea resizes up perfectly, but when going down a line the resize becomes jerky.
+This works, but not perfectly. The textarea resizes up perfectly, but when going down a line the resize becomes staggered.
 
-TODO: add the gif
+![Staggered change to textarea height]({{ site.s3_url }}/posts/vue-autosize-textarea/jerky-change.gif)
 
-Depending on the rest of your project your textarea might also not resize down at all. This is because the scroll area is _already_ larger than the height, so resizing down doesn't work quite as well.
+Depending on the rest of your project, your textarea might not resize down at all. This is because the scroll area is already larger than the height, so resizing down doesn't work quite as well.
 
 There is one last trick we can pull to fix this behavior.
 
 ## Shadow Textarea
 
-The basic idea is to add a second textarea with the same styling, and a height that never changes. Once that is in place, we can set the visible textarea's height from the shadow textarea's scrollheight. Since the shadow textarea never gets any larger, its scroll height will snap the visible textarea scroll height down when a line is removed.
+The basic idea is to add a second textarea with the same styling and a height that never changes. Once that is in place, we can set the visible textarea's height from the shadow textarea's scroll height. Since the shadow textarea never gets any larger, its scroll height will snap the visible textarea scroll height down when a line is removed.
 
 {% highlight html %}
 <template>
@@ -311,10 +311,12 @@ The basic idea is to add a second textarea with the same styling, and a height t
 
 This is a pretty simple change. We add the shadow input, along with some styles and attributes that will hide it from the browser as well as possible without hiding it from the DOM. Then we change our `resize` method to pull `scrollHeight` from the shadow textarea instead of the visible textarea.
 
-TODO: gif
+![Immediate change to textarea height]({{ site.s3_url }}/posts/vue-autosize-textarea/working-change.gif)
 
 And our auto-resize is working!
 
 At this point you can add additional styling, or put a transition on `min-height` to make the change smoother. If you're not using `box-sizing: border-box;` you'll need to adjust the `resize` calculation to account for vertical padding.
+
+Enjoy! And let me know of any ways I can make this article better down below!
 
 View the code on [Github](https://github.com/sstadt/vue-autosize-textarea).
