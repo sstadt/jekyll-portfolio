@@ -4,7 +4,7 @@ heroImage: /posts/vue-autosize-textarea/header-AutosizeTextarea.jpg
 thumbnail: /posts/vue-autosize-textarea/share-AutosizeTextarea.jpg
 title: "Build an Autosizing Textarea With Vue"
 lightNav: true
-date: 2019-05-03 10:00:00 -0500
+date: 2019-06-03 10:00:00 -0500
 ---
 {:.intro}
 So you've seen those cool textarea components in frameworks like Vuetify and VueMaterial, but you don't want to install a full UI framework for your new project. That kind of effect is actually pretty easy to set up once you know a couple tricks. So let's jump right in...
