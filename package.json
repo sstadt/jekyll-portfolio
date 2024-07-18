@@ -1,0 +1,16 @@
+{
+  "name": "jekyll-portfolio",
+  "version": "1.0.0",
+  "description": "My jekyll portfolio/blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "jekyll serve",
+    "build": "jekyll build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sstadt/jekyll-portfolio.git"
+  },
+  "author": "Scott Stadt",
+  "homepage": "https://scott-stadt.com"
+}

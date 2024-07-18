@@ -1,9 +1,9 @@
 ---
 layout: project
 title: Sydney Symphony Orchestra
-thumbnail: /projects/l2/share-sso.jpg
-heroImage: "/projects/l2/hero-l2.jpg?v=1"
-headerImage: "/projects/l2/header-sso.png?v=1"
+thumbnail: /images/projects/l2/share-sso.jpg
+heroImage: "/images/projects/l2/hero-l2.jpg?v=1"
+headerImage: "/images/projects/l2/header-sso.png?v=1"
 order: 6
 synopsis: Home page for Sydney Symphony Orchestra
 ---

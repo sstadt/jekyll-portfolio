@@ -1,7 +1,7 @@
 ---
 layout: article
-heroImage: /posts/sails-pipe/hero-SailsPipe.jpg?v=1
-thumbnail: /posts/sails-pipe/share-SailsPipe.jpg
+heroImage: /images/posts/sails-pipe/hero-SailsPipe.jpg?v=1
+thumbnail: /images/posts/sails-pipe/share-SailsPipe.jpg
 title: "Centralize Your Sails.js Sockets with a Pipe"
 lightNav: true
 date: 2017-11-12 10:00:00 -0500

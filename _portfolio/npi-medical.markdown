@@ -1,9 +1,9 @@
 ---
 layout: project
 title: NPI Medical
-thumbnail: /projects/solid/share-NPIMedical.jpg
-heroImage: "/projects/solid/hero-solid.jpg?v=1"
-headerImage: /projects/solid/header-NPIMedical.png
+thumbnail: /images/projects/solid/share-NPIMedical.jpg
+heroImage: "/images/projects/solid/hero-solid.jpg?v=1"
+headerImage: /images/projects/solid/header-NPIMedical.png
 order: 2
 synopsis: Home page for NPI Medical
 ---

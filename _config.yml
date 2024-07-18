@@ -16,9 +16,9 @@
 title: ScottStadt.com
 email: scott.stadt@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I'm just a Vue developer living in a React world. Based out of Columbus, OH, I like DRY development, the Jedi Code, and long walks down the Sword Coast. Click the vectors below to get in touch!
+  I'm just a Vue developer living in a React world. Based out of Columbus, OH. I like DRY development, the Jedi Code, and long walks down the Sword Coast. Click the vectors below to get in touch!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.scottstadt.com"
+url: "https://www.scott-stadt.com"
 github_username:  sstadt
 
 # Build settings
@@ -46,4 +46,4 @@ collections:
   portfolio:
     output: true
 
-s3_url: "https://ssdcportfolio.s3.amazonaws.com"
+assets_url: "/assets"

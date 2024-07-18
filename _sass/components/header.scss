@@ -1,4 +1,8 @@
 
+@use "sass:math";
+
+$half-gutter: math.div($global-gutter, 2);
+
 header {
   margin-bottom: $global-gutter;
   position: relative;
@@ -30,8 +34,8 @@ header {
   .header-content {
     position: absolute;
     max-width: 100%;
-    padding-left: $global-gutter / 2;
-    padding-right: $global-gutter / 2;
+    padding-left: $half-gutter;
+    padding-right: $half-gutter;
     bottom: 10px;
 
     @include tablet-up() {
@@ -76,9 +80,9 @@ header {
 
   .escape-hatch {
     position: absolute;
-    left: $global-gutter / 2;
+    left: $half-gutter;
     top: 0;
-    padding-top: $global-gutter / 2; // keeps the page from jumping when toggling the menu
+    padding-top: $half-gutter; // keeps the page from jumping when toggling the menu
 
     @include phone-only() {
       left: auto;

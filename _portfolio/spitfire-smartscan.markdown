@@ -1,10 +1,10 @@
 ---
 layout: project
 title: Spitfire Smartscan
-thumbnail: /projects/solid/share-SpitfireSmartscan.jpg
-heroImage: "/projects/solid/hero-solid.jpg?v=1"
-headerImage: "/projects/solid/header-SpitfireSmartscan.png?v=1"
-order: 4
+thumbnail: /images/projects/solid/share-SpitfireSmartscan.jpg
+heroImage: "/images/projects/solid/hero-solid.jpg?v=1"
+headerImage: "/images/projects/solid/header-SpitfireSmartscan.png?v=1"
+order: 3
 synopsis: A social-driven communication quiz by Spitfire
 ---
 {:.externals}

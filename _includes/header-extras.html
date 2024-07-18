@@ -1,9 +1,9 @@
 
-<header {% if page.lightNav %}class="light"{% endif %} style="background-image: url({{ site.s3_url }}{{ page.heroImage }});">
+<header {% if page.lightNav %}class="light"{% endif %} style="background-image: url({{ site.assets_url }}{{ page.heroImage }});">
   {% include menu.html %}
   <div class="header-content">
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="header-description">{{ page.description }}</p>{% endif %}
   </div>
-  {% if page.headerImage %}<img src="{{ site.s3_url }}{{ page.headerImage }}" class="header-image" />{% endif %}
+  {% if page.headerImage %}<img src="{{ site.assets_url }}{{ page.headerImage }}" class="header-image" />{% endif %}
 </header>

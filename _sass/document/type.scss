@@ -1,4 +1,6 @@
 
+@use "sass:math";
+
 body {
   font-family: $body-font-family;
 }
@@ -77,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-family;
 
   @include phone-only() {
-    margin-bottom: $global-padding / 2;
+    margin-bottom: math.div($global-padding, 2);
   }
 }
 

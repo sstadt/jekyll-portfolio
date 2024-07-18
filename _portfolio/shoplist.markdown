@@ -1,8 +1,8 @@
 ---
 layout: project
 title: Shoplist
-thumbnail: /projects/shoplist/share-shoplist.jpg
-heroImage: /projects/shoplist/hero-shoplist.jpg
+thumbnail: /images/projects/shoplist/share-shoplist.jpg
+heroImage: /images/projects/shoplist/hero-shoplist.jpg
 order: 4
 lightNav: true
 synopsis: A simple shopping list built on Sails.js and Knockout.js

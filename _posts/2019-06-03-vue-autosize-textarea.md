@@ -1,7 +1,7 @@
 ---
 layout: article
-heroImage: /posts/vue-autosize-textarea/header-AutosizeTextarea.jpg
-thumbnail: /posts/vue-autosize-textarea/share-AutosizeTextarea.jpg
+heroImage: /images/posts/vue-autosize-textarea/header-AutosizeTextarea.jpg
+thumbnail: /images/posts/vue-autosize-textarea/share-AutosizeTextarea.jpg
 title: "Build an Autosizing Textarea With Vue"
 lightNav: true
 date: 2019-06-03 10:00:00 -0500
@@ -80,7 +80,7 @@ We're only building a single component today, so let's make sure we build it in 
 </style>
 {% endhighlight %}
 
-Just a couple things worth noting here. 
+Just a couple things worth noting here.
 
 We'll ultimately need a wrapper element for the effect, so it will be less rework to just do that now.
 
@@ -234,7 +234,7 @@ We'll need to add a few things to the component to make this happen. First, we n
 
 This works, but not perfectly. The textarea resizes up perfectly, but when going down a line the resize becomes staggered.
 
-![Staggered change to textarea height]({{ site.s3_url }}/posts/vue-autosize-textarea/jerky-change.gif)
+![Staggered change to textarea height]({{ site.assets_url }}/images/posts/vue-autosize-textarea/jerky-change.gif)
 
 Depending on the rest of your project, your textarea might not resize down at all. This is because the scroll area is already larger than the height, so resizing down doesn't work quite as well.
 
@@ -311,7 +311,7 @@ The basic idea is to add a second textarea with the same styling and a height th
 
 This is a pretty simple change. We add the shadow input, along with some styles and attributes that will hide it from the browser as well as possible without hiding it from the DOM. Then we change our `resize` method to pull `scrollHeight` from the shadow textarea instead of the visible textarea.
 
-![Immediate change to textarea height]({{ site.s3_url }}/posts/vue-autosize-textarea/working-change.gif)
+![Immediate change to textarea height]({{ site.assets_url }}/images/posts/vue-autosize-textarea/working-change.gif)
 
 And our auto-resize is working!
 

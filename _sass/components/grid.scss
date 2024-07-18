@@ -1,4 +1,6 @@
 
+@use "sass:math";
+
 /**
  * Standard Grid - TODO
  *
@@ -14,18 +16,19 @@
 $grid-row-width: 100%;
 $grid-max-cols: 12;
 $block-grid-max-cols: 12;
+$half-gutter: math.div($global-gutter, 2);
 
 @mixin grid-row($size) {
   @for $i from 1 through $grid-max-cols {
     &.#{$size}-#{$i} {
-      width: percentage($i / $grid-max-cols);
+      width: percentage(math.div($i, $grid-max-cols));
     }
   }
 }
 
 @mixin block-grid ($per-row) {
   & > .column {
-    width: (100%/$per-row);
+    width: (math.div(100%, $per-row));
 
     $nth: #{$per-row}n + '+' + 1;
     &:nth-of-type(n) { clear: none; }
@@ -41,8 +44,8 @@ $block-grid-max-cols: 12;
 
 .row {
   padding: 0;
-  margin-left: -($global-gutter / 2);
-  margin-right: -($global-gutter / 2);
+  margin-left: -$half-gutter;
+  margin-right: -$half-gutter;
   @include clearfix;
 
   &[class*="-up-"] {
@@ -50,15 +53,15 @@ $block-grid-max-cols: 12;
       display: block;
       float: left;
       margin: 0;
-      padding: 0 ($global-gutter / 2) $global-gutter ($global-gutter / 2);
+      padding: 0 $half-gutter $global-gutter $half-gutter;
     }
   }
 
   & > .column {
     float: left;
 
-    padding-left: $global-gutter / 2;
-    padding-right: $global-gutter / 2;
+    padding-left: $half-gutter;
+    padding-right: $half-gutter;
 
     @include grid-row('small');
     @include tablet-up { @include grid-row('medium'); }

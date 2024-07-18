@@ -1,7 +1,7 @@
 ---
 layout: article
-heroImage: /posts/firebase-security-query/header-FirebaseSecurityQuery.jpg
-thumbnail: /posts/firebase-security-query/share-FirebaseSecurityQuery.jpg
+heroImage: /images/posts/firebase-security-query/header-FirebaseSecurityQuery.jpg
+thumbnail: /images/posts/firebase-security-query/share-FirebaseSecurityQuery.jpg
 title: "Query Firestore to Validate Security Rules"
 lightNav: true
 date: 2019-03-18 10:00:00 -0500
@@ -26,7 +26,7 @@ quests
 └── description
 {% endhighlight %}
 
-We want to keep our collections shallow to improve query performance, so splitting quests out will suit our needs. The next step is to set up some basic security rules for these collection. 
+We want to keep our collections shallow to improve query performance, so splitting quests out will suit our needs. The next step is to set up some basic security rules for these collection.
 
 ### Setting up Some Basic Security Rules
 
@@ -54,7 +54,7 @@ service cloud.firestore {
 
 ### Adding Queries to Security Rules
 
-For the last step we have a bit of a snag. Because our data has been kept shallow, we don't have any user IDs on the quest object. It would be easy enough to add the game master at the time of creation, but that doesn't present a solution for the game's players. We _could_ pass along the players as well, but this would create a data redundancy that would have to be maintained to avoid `quest.players` and `game.players` from falling out of sync. 
+For the last step we have a bit of a snag. Because our data has been kept shallow, we don't have any user IDs on the quest object. It would be easy enough to add the game master at the time of creation, but that doesn't present a solution for the game's players. We _could_ pass along the players as well, but this would create a data redundancy that would have to be maintained to avoid `quest.players` and `game.players` from falling out of sync.
 
 That might be ok for your use case, but let's keep things simple and assume anyone who can view the game can view the quest. Let's start by adding a route for quests to the rules:
 
@@ -67,7 +67,7 @@ service cloud.firestore {
       allow create;
     }
     match /quests/{questId} {
-      
+
     }
   }
 }

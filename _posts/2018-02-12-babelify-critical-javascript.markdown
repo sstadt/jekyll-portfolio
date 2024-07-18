@@ -1,7 +1,7 @@
 ---
 layout: article
-heroImage: /posts/babelify-critical-css/header-KeepCalmAndBabel.jpg
-thumbnail: /posts/babelify-critical-css/share-KeepCalmAndBabel.jpg
+heroImage: /images/posts/babelify-critical-css/header-KeepCalmAndBabel.jpg
+thumbnail: /images/posts/babelify-critical-css/share-KeepCalmAndBabel.jpg
 title: "Babelify Critical JavaScript with Gulp"
 lightNav: true
 date: 2018-02-12 10:00:00 -0500
@@ -82,7 +82,7 @@ gulp.task('default', ['inline', 'serve']);
 
 Now if you run gulp you should be able to view the clock in a browser at **localhost:3000**.
 
-![The current time is: 20:49:11]({{ site.s3_url }}/posts/babelify-critical-css/interstitial-WorkingClock.jpg?v=1)
+![The current time is: 20:49:11]({{ site.assets_url }}/images/posts/babelify-critical-css/interstitial-WorkingClock.jpg?v=1)
 
 We can also see the result of the **inline** task by checking out the freshly compiled **dist/index.html**:
 

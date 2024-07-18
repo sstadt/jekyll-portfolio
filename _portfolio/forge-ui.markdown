@@ -1,8 +1,8 @@
 ---
 layout: project
 title: Forge UI
-thumbnail: /projects/forge-ui/share-ForgeUI.jpg
-heroImage: "/projects/forge-ui/hero-ForgeUI.jpg?v=2"
+thumbnail: /images/projects/forge-ui/share-ForgeUI.jpg
+heroImage: "/images/projects/forge-ui/hero-ForgeUI.jpg?v=2"
 order: 7
 lightNav: true
 synopsis: A light weight collection of customizable Vue.js components
