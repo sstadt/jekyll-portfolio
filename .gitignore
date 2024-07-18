@@ -1,4 +1,23 @@
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# jekyll
 _site
 .sass-cache
+.jekyll-cache
 .jekyll-metadata
-node_modules
+vendor
