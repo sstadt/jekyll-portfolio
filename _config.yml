@@ -20,23 +20,19 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.scott-stadt.com"
 github_username:  sstadt
+assets_url: "/assets"
 
 # Build settings
-markdown: kramdown
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
-  - docker-compose.yml
   - README.md
-  - node_modules
   - package.json
   - .jshintrc
   - CNAME
-
-include: ['_pages']
 
 sass:
   sass_dir: _sass
@@ -45,5 +41,3 @@ sass:
 collections:
   portfolio:
     output: true
-
-assets_url: "/assets"
