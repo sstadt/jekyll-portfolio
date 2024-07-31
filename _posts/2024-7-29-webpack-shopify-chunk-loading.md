@@ -68,7 +68,7 @@ We don't want that.
 
 So make sure your chunkhash is set up to look like a query string in the code sample above (with chunkhash AFTER `.js?`). That way, when Webpack queries for a chunk on the front end, it will include the freshly generated chunkhash from the build.
 
-In and of itself, this busts nothing. Files are still generated as usual, and then cached by Shopify. But since each new Webpack build generates a new set of chunkhash values for each file, the request to Shopify will include those new values. Since the file in question will not have been requested before, Shopify will have no cache for the file and serves it up fresh.
+Files are still generated as usual, and then cached by Shopify. But since each new Webpack build generates a new set of chunkhash values for each file, the request to Shopify will include those new values. Since the file in question will not have been requested before (at least not with the new cache string), Shopify will have no cache for the file and serves it up fresh.
 
 ### Problem Solved!
 
