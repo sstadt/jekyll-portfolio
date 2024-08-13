@@ -40,6 +40,29 @@ footer {
       }
     }
 
+    .site-links {
+      display: flex;
+
+      li {
+        &:not(:first-child) {
+          padding-left: 4px;
+          border-left: 1px solid white;
+        }
+
+        &:not(:last-child) {
+          padding-right: 4px;
+        }
+
+        a {
+          color: white;
+
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     .avatar {
       flex-shrink: 0;
     }
