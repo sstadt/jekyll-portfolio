@@ -45,12 +45,12 @@ footer {
 
       li {
         &:not(:first-child) {
-          padding-left: 4px;
+          padding-left: 20px;
           border-left: 1px solid white;
         }
 
         &:not(:last-child) {
-          padding-right: 4px;
+          padding-right: 20px;
         }
 
         a {
